@@ -41,6 +41,75 @@
                 blink-caret .75s step-end infinite;
         }
 
+        @keyframes glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff, 0 0 40px #00e6ff, 0 0 70px #00e6ff, 0 0 80px #00e6ff, 0 0 100px #00e6ff;
+            }
+
+            50% {
+                text-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff, 0 0 15px #00b3ff, 0 0 20px #00e6ff, 0 0 35px #00e6ff, 0 0 40px #00e6ff, 0 0 50px #00e6ff;
+            }
+        }
+
+        .h1-glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            60% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .bounce span {
+            display: inline-block;
+            animation: bounce 0.8s ease;
+        }
+
+        /* Apply delay to each span for sequential dropping */
+        .bounce span:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .bounce span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        /* Continue for each span */
+        @keyframes fadeInScaleUp {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fadeInScaleUp {
+            animation: fadeInScaleUp 1s ease-out;
+        }
+
+
+
         /* The typing effect */
         @keyframes typing {
             from {
@@ -122,18 +191,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#section1">Home</a></li>
-                <li><a href="#section2">Background</a></li>
-                <li><a href="#section3">Visualizations</a></li>
-                <li><a href="#section4">Model</a></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Background">Background</a></li>
+                <li><a href="#Visualizations">Visualizations</a></li>
+                <li><a href="#Model">Model</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="section1" class="typewriter">
         <h1>Disease Outbreak: Asthma Analysis</h1>
-        <div class="subtitle">Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore
-            Ajagbe</div>
+        <div class="subtitle">Emily Fu, Tejal Nair, Anusha Bishayee, Jibran Khan, Sore Ajagbe, Jennifer Kim</div>
+        <!-- Lungs Graphic Placeholder -->
+        <!-- Image source -->
+        <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
+            alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
     </section>
 
     <!-- Scroll Prompt Section -->
