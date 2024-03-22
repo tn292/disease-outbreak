@@ -1,1 +1,90 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Page Template</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #333;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    #section1 {
+      background: #1abc9c;
+    }
+
+    #section2 {
+      background: #3498db;
+    }
+
+    #section3 {
+      background: #9b59b6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#section1">Section 1</a></li>
+        <li><a href="#section2">Section 2</a></li>
+        <li><a href="#section3">Section 3</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="section1">
+    <p>Welcome to Section 1</p>
+  </section>
+
+  <section id="section2">
+    <p>Welcome to Section 2</p>
+  </section>
+
+  <section id="section3">
+    <p>Welcome to Section 3</p>
+  </section>
+
+</body>
+
+</html>
