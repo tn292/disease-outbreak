@@ -77,6 +77,8 @@
             }
         }
 
+
+
         .bounce span {
             display: inline-block;
             animation: bounce 0.8s ease;
@@ -151,6 +153,38 @@
             color: white;
         }
 
+        .slider-container {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .year-slider {
+            width: 100%;
+        }
+
+        .slider-ticks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        .slider-ticks span {
+            position: relative;
+            display: block;
+            text-align: center;
+            width: 1px;
+            background: #333;
+            height: 10px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+
+        .year-label {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
         section {
             height: 100vh;
             display: flex;
@@ -167,11 +201,11 @@
         }
 
         #Background {
-            background: #3498db;
+            background: #9b59b6;
         }
 
         #Visualizations {
-            background: #9b59b6;
+            background: #3498db;
         }
 
         #Model {
@@ -220,8 +254,21 @@
         </div>
     </div>
 
+
     <section id="Background">
         <p>Background Information</p>
+        <p>Asthma prevalence through the years by state:</p>
+        <div class="slider-container">
+            <input type="range" min="2017" max="2021" value="2021" step="1" id="yearSlider" class="year-slider">
+            <div class="slider-ticks">
+                <span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span>
+            </div>
+        </div>
+        <div id="yearLabel" class="year-label">2021</div>
+
+
+        <!-- Iframe Placeholder -->
+        <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"></iframe>
     </section>
 
     <!-- Scroll Prompt Section -->
@@ -255,6 +302,28 @@
     <section id="Model">
         <p>Model</p>
     </section>
+
+    <script>
+        document.getElementById('yearSlider').addEventListener('input', function () {
+            var year = this.value;
+            var yearUrls = {
+                "2017": "https://pages.github.coecis.cornell.edu/tn292/asthma2017/",
+                "2018": "https://pages.github.coecis.cornell.edu/tn292/asthma2018/",
+                "2019": "https://pages.github.coecis.cornell.edu/tn292/asthma2019/",
+                "2020": "https://pages.github.coecis.cornell.edu/tn292/asthma2020/",
+                "2021": "https://pages.github.coecis.cornell.edu/tn292/asthma2021/",
+                // Add more mappings as needed
+            };
+
+            // Update the iframe's src to the selected year's URL
+            document.getElementById('yearIframe').src = yearUrls[year];
+
+            // Update the year label to display the selected year
+            document.getElementById('yearLabel').innerText = year;
+        });
+    </script>
+
+
 
 </body>
 
