@@ -24,22 +24,62 @@
             box-sizing: border-box;
         }
 
+        .title-container {
+            text-align: left;
+            max-width: 600px;
+        }
+
         .typewriter h1 {
             color: #fff;
             overflow: hidden;
-            /* Ensures the content is not revealed until the animation */
             border-right: .15em solid orange;
-            /* The typwriter cursor */
             white-space: nowrap;
-            /* Keeps the content on a single line */
-            margin: 0 auto;
-            /* Gives that scrolling effect as the typing happens */
+            margin: 0;
             letter-spacing: .15em;
-            /* Adjust as needed */
-            animation:
-                typing 3.5s steps(40, end),
-                blink-caret .75s step-end infinite;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: orange;
+            }
+        }
+
+        .typewriter h1 {
+            /* Your existing styles */
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        .title-container h2 {
+            margin: 10px 0;
+            font-size: 2rem;
+            font-style: italic;
+        }
+
+        .title-container h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #c6ac8f;
+        }
+
+
 
         @keyframes glow {
 
@@ -112,29 +152,7 @@
 
 
 
-        /* The typing effect */
-        @keyframes typing {
-            from {
-                width: 0
-            }
 
-            to {
-                width: 100%
-            }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: orange;
-            }
-        }
 
         nav ul {
             list-style-type: none;
@@ -160,6 +178,14 @@
 
         .year-slider {
             width: 100%;
+            height: 10px;
+            background: #4CAF50;
+            /* Change slider color */
+            outline: none;
+            opacity: 0.8;
+            /* Slight transparency, adjust as desired */
+            transition: opacity .2s;
+            margin: 0 auto;
         }
 
         .slider-ticks {
@@ -197,19 +223,76 @@
         }
 
         #Home {
-            background: #1abc9c;
+            background: #3b3f4e;
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
+        #Home {
+            /* Existing styles, ensure you're setting the background, color, etc., as you wish */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Align items to the start (left) of the container */
+            justify-content: flex-start;
+            /* Align items to the start (top) of the container */
+            padding-left: 20px;
+            /* Add some padding on the left */
+            padding-top: 100px;
+            /* Adjust based on your fixed header's height to prevent overlap */
+        }
+
+        .title-wrapper {
+            text-align: left;
+            margin-left: 20px;
+            /* Optional: Depending on how far from the left you want your titles */
+        }
+
+        .typewriter h1,
+        .title-wrapper h2,
+        .title-wrapper h3 {
+            margin: 0;
+            /* Removes default margins */
+        }
+
+        .title-wrapper h2 em {
+            font-size: 1.7rem;
+            /* Adjust the font size as needed */
+        }
+
+        .title-wrapper h3 {
+            color: #c6ac8f;
+            /* Or any other color */
+            font-size: 1.0rem;
+            /* Adjust the font size as needed */
+            margin-top: 10px;
+            /* Adds a little space between the subtitle and the names */
+        }
+
+        #Home img {
+            filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.7));
+            /* Adjust color and size as needed */
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+
         #Background {
-            background: #9b59b6;
+            background: #3b3f4e;
         }
 
         #Visualizations {
-            background: #3498db;
+            background: #3b3f4e;
         }
 
         #Model {
-            background: #ea0b1d;
+            background: #3b3f4e;
         }
 
         .subtitle {
@@ -233,13 +316,17 @@
         </nav>
     </header>
 
-    <section id="Home" class="typewriter">
-        <h1>Disease Outbreak: Asthma Analysis</h1>
-        <div class="subtitle">Emily Fu, Tejal Nair, Anusha Bishayee, Jibran Khan, Sore Ajagbe, Jennifer Kim</div>
-        <!-- Lungs Graphic Placeholder -->
-        <!-- Image source -->
-        <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
-            alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
+    <section id="Home">
+        <div class="title-wrapper">
+            <div class="typewriter">
+                <h1>Disease Outbreak</h1>
+            </div>
+            <h2><em>Asthma Analysis</em></h2>
+            <h3>Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore Ajagbe</h3>
+            <!-- Lungs Graphic Placeholder -->
+            <!-- Image source -->
+            <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
+                alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
     </section>
 
     <!-- Scroll Prompt Section -->
@@ -259,12 +346,12 @@
         <p>Background Information</p>
         <p>Asthma prevalence through the years by state:</p>
         <div class="slider-container">
-            <input type="range" min="2017" max="2021" value="2021" step="1" id="yearSlider" class="year-slider">
+            <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
             <div class="slider-ticks">
                 <span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span>
             </div>
         </div>
-        <div id="yearLabel" class="year-label">2021</div>
+        <div id="yearLabel" class="year-label">2017</div>
 
 
         <!-- Iframe Placeholder -->
@@ -302,6 +389,50 @@
     <section id="Model">
         <p>Model</p>
     </section>
+
+    <script>
+        const typewriterElement = document.querySelector('.typewriter h1');
+        const text = 'Disease Outbreak';
+        const minIndex = 1; // Keep the first letter visible
+
+        let index = 0;
+        let direction = 'forward';
+
+        function typewriterEffect() {
+            setTimeout(() => {
+                // Adjust text content based on the current index
+                typewriterElement.textContent = text.slice(0, index);
+
+                // Determine the direction and update the index accordingly
+                if (direction === 'forward') {
+                    if (index < text.length) {
+                        index++;
+                    } else {
+                        // Pause before starting to erase
+                        setTimeout(() => {
+                            direction = 'backward';
+                        }, 1000); // Pause time in milliseconds
+                    }
+                } else {
+                    if (index > minIndex) {
+                        index--;
+                    } else {
+                        // Pause before typing again, starting from the first letter
+                        setTimeout(() => {
+                            direction = 'forward';
+                        }, 1000); // Pause time in milliseconds
+                    }
+                }
+
+                // Recursive call to continue the effect
+                typewriterEffect();
+            }, direction === 'forward' ? 120 : 60); // Adjust typing and erasing speed
+        }
+
+        // Initial call to start the effect
+        typewriterEffect();
+    </script>
+
 
     <script>
         document.getElementById('yearSlider').addEventListener('input', function () {
