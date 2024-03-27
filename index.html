@@ -2,26 +2,37 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrolling Page Template</title>
     <style>
         body,
         html {
+            font-family: "Inconsolata", monospace;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
-            font-family: Arial, sans-serif;
         }
 
         header {
-            background: #333;
+            background: #cee4eaf4;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             padding: 20px 0;
             box-sizing: border-box;
+            display: flex;
+            /* Enable Flexbox */
+            align-items: center;
+            /* Center items vertically */
+            justify-content: flex-end;
+            /* Align items to the right */
         }
 
         .title-container {
@@ -32,11 +43,10 @@
         .typewriter h1 {
             color: #fff;
             overflow: hidden;
-            border-right: .15em solid orange;
             white-space: nowrap;
             margin: 0;
             letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            animation: typing 3.5s steps(40, end);
         }
 
         @keyframes typing {
@@ -49,21 +59,12 @@
             }
         }
 
-        @keyframes blink-caret {
 
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: orange;
-            }
-        }
 
         .typewriter h1 {
             /* Your existing styles */
             animation: blink-caret .75s step-end infinite;
+            color: rgb(250, 195, 13);
         }
 
         .title-container h2 {
@@ -76,7 +77,7 @@
             margin: 0;
             font-size: 1.5rem;
             font-weight: normal;
-            color: #c6ac8f;
+            color: #eac130;
         }
 
 
@@ -160,15 +161,20 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            /* Center the navigation items */
         }
 
         nav ul li {
-            margin: 10px;
+            margin: 0 10px;
+            /* Adjust spacing around each nav item */
         }
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: rgb(8, 6, 6);
+            padding: 5px 10px;
+            /* Adjust padding to fit your design */
+            display: block;
         }
 
         .slider-container {
@@ -191,23 +197,60 @@
         .slider-ticks {
             display: flex;
             justify-content: space-between;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
         .slider-ticks span {
             position: relative;
             display: block;
-            text-align: center;
+            text-align: left;
             width: 1px;
             background: #333;
             height: 10px;
-            line-height: 20px;
-            font-size: 12px;
+            line-height: 30px;
+            font-size: 15px;
         }
 
         .year-label {
             text-align: center;
             margin-top: 20px;
+        }
+
+        .caret {
+            color: #FF5733;
+            /* Change this color to your preference */
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                color: transparent;
+            }
+
+            50% {
+                color: #FF5733;
+            }
+
+            /* Ensure this matches the caret color */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav ul {
+                justify-content: space-around;
+                /* Adjust based on design preference */
+            }
+
+            nav ul li {
+                margin: 5px 0;
+                /* Adjust for vertical spacing on small screens */
+            }
         }
 
 
@@ -223,8 +266,8 @@
         }
 
         #Home {
-            background: #3b3f4e;
-            color: #fff;
+            background: #cee4eaf4;
+            color: #333;
             padding: 20px;
             min-height: 100vh;
             display: flex;
@@ -246,26 +289,50 @@
             /* Adjust based on your fixed header's height to prevent overlap */
         }
 
+        .home-container {
+            display: flex;
+            /* Enables flexbox for the container */
+            width: 100%;
+            /* Take up the full width of the section */
+            max-width: 1200px;
+            /* Adjust based on your design */
+            align-items: center;
+            /* Align items vertically */
+            justify-content: space-between;
+            /* Space out the left and right content */
+        }
+
         .title-wrapper {
             text-align: left;
             margin-left: 20px;
             /* Optional: Depending on how far from the left you want your titles */
         }
 
+        .left-content,
+        .right-content {
+            text-align: left;
+            flex: 1;
+            /* Each takes up equal space */
+            padding: 5px;
+            /* Add some padding around content */
+        }
+
         .typewriter h1,
         .title-wrapper h2,
         .title-wrapper h3 {
             margin: 0;
+            font-size: 2.8rem;
             /* Removes default margins */
         }
 
         .title-wrapper h2 em {
             font-size: 1.7rem;
-            /* Adjust the font size as needed */
+            color: rgb(10, 174, 244)
+                /* Adjust the font size as needed */
         }
 
         .title-wrapper h3 {
-            color: #c6ac8f;
+            color: #45a5f4;
             /* Or any other color */
             font-size: 1.0rem;
             /* Adjust the font size as needed */
@@ -274,7 +341,7 @@
         }
 
         #Home img {
-            filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.7));
+            filter: drop-shadow(0 0 15px rgba(255, 230, 42, 0.7));
             /* Adjust color and size as needed */
             margin-top: 20px;
             max-width: 100%;
@@ -284,15 +351,15 @@
 
 
         #Background {
-            background: #3b3f4e;
+            background: #cee4eaf4;
         }
 
         #Visualizations {
-            background: #3b3f4e;
+            background: #cee4eaf4;
         }
 
         #Model {
-            background: #3b3f4e;
+            background: #cee4eaf4;
         }
 
         .subtitle {
@@ -314,19 +381,46 @@
                 <li><a href="#Model">Model</a></li>
             </ul>
         </nav>
+
     </header>
 
+
+
     <section id="Home">
-        <div class="title-wrapper">
-            <div class="typewriter">
-                <h1>Disease Outbreak</h1>
+        <div class="home-container">
+            <div class="left-content">
+                <div class="title-wrapper">
+                    <div class="typewriter">
+                        <h1>Disease Outbreak:</h1>
+                    </div>
+                    <h2><em>Asthma Analysis</em></h2>
+                    <!-- <h3>Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore Ajagbe
+                    </h3> -->
+                    <!-- Lungs Graphic Placeholder -->
+                    <!-- Image source -->
+                    <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
+                        alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
+                </div>
             </div>
-            <h2><em>Asthma Analysis</em></h2>
-            <h3>Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore Ajagbe</h3>
-            <!-- Lungs Graphic Placeholder -->
-            <!-- Image source -->
-            <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
-                alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
+            <div class="right-content">
+                <!-- New text content you want to add on the right -->
+                <div style="color: rgb(176, 84, 84); font-size: larger; text-align: center;">
+                    <p><em>What is Asthma?</em></p>
+                </div>
+                <div style="color: rgb(81, 77, 77); text-align: center;">
+                    <p>Asthma, the chronic respiratory condition marked by recurring challenges in
+                        breathing, has become a
+                        prevalent health concern in the United States. It's a disease that doesn't spread through
+                        contagion,
+                        yet its increasing incidence is undeniably alarming.</p>
+                    <center>
+                        <img src=https://i.pinimg.com/originals/94/ab/af/94abaf23721ca08808b03c7cece5beef.png
+                            alt="Lungs"
+                            style="filter: none; margin-left: auto; margin-right: auto; max-width: 50%; height: 50%;"
+                            </div>
+                    </center>
+                </div>
+
     </section>
 
     <!-- Scroll Prompt Section -->
@@ -392,46 +486,41 @@
 
     <script>
         const typewriterElement = document.querySelector('.typewriter h1');
-        const text = 'Disease Outbreak';
-        const minIndex = 1; // Keep the first letter visible
-
+        const text = 'Disease Outbreak ';
         let index = 0;
         let direction = 'forward';
+        let caretVisible = true;
+
+        function updateText() {
+            const displayText = text.slice(0, index) + (caretVisible ? '|' : '');
+            typewriterElement.textContent = displayText;
+            caretVisible = !caretVisible; // Toggle the caret visibility
+        }
 
         function typewriterEffect() {
             setTimeout(() => {
-                // Adjust text content based on the current index
-                typewriterElement.textContent = text.slice(0, index);
-
-                // Determine the direction and update the index accordingly
                 if (direction === 'forward') {
                     if (index < text.length) {
                         index++;
                     } else {
-                        // Pause before starting to erase
-                        setTimeout(() => {
-                            direction = 'backward';
-                        }, 1000); // Pause time in milliseconds
+                        setTimeout(() => { direction = 'backward'; }, 1000);
                     }
                 } else {
-                    if (index > minIndex) {
+                    if (index > 1) {
                         index--;
                     } else {
-                        // Pause before typing again, starting from the first letter
-                        setTimeout(() => {
-                            direction = 'forward';
-                        }, 1000); // Pause time in milliseconds
+                        setTimeout(() => { direction = 'forward'; }, 1000);
                     }
                 }
-
-                // Recursive call to continue the effect
+                updateText();
                 typewriterEffect();
-            }, direction === 'forward' ? 120 : 60); // Adjust typing and erasing speed
+            }, direction === 'forward' ? 120 : 60);
         }
 
-        // Initial call to start the effect
+        // Start the typewriter effect
         typewriterEffect();
     </script>
+
 
 
     <script>
