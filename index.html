@@ -4,8 +4,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Handlee&family=Ojuju:wght@200..800&display=swap"
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
     <style>
         body,
         html {
-            font-family: "Inconsolata", monospace;
+            font-family: "Handlee", cursive;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
@@ -183,15 +182,33 @@
         }
 
         .year-slider {
+            -webkit-appearance: none;
             width: 100%;
-            height: 10px;
-            background: #4CAF50;
-            /* Change slider color */
+            height: 15px;
+            border-radius: 5px;
+            background: #020755;
             outline: none;
-            opacity: 0.8;
-            /* Slight transparency, adjust as desired */
+            opacity: 0.7;
+            -webkit-transition: .2s;
             transition: opacity .2s;
-            margin: 0 auto;
+        }
+
+        .year-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #FF5733;
+            cursor: grab;
+        }
+
+        .year-slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #FF5733;
+            cursor: grab;
         }
 
         .slider-ticks {
@@ -205,15 +222,15 @@
             display: block;
             text-align: left;
             width: 1px;
-            background: #333;
+            background: #FF5733;
             height: 10px;
-            line-height: 30px;
+            line-height: 20px;
             font-size: 15px;
         }
 
         .year-label {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .caret {
@@ -437,19 +454,29 @@
 
 
     <section id="Background">
-        <p>Background Information</p>
-        <p>Asthma prevalence through the years by state:</p>
-        <div class="slider-container">
-            <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
-            <div class="slider-ticks">
-                <span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span>
+        <div style="color: rgb(176, 84, 84);">
+            <p>Background Information</p>
+        </div>
+        <div class="home-container">
+            <div class="left-content">
+                <div style="color:rgb(250, 195, 13); text-align: center;">
+                    <p>Asthma prevalence through the years by state:</p>
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
+                    <div class="slider-ticks" , style="color: #FF5733;">
+                        <span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span>
+                    </div>
+                </div>
+                <div style="color:#00b3ff">
+                    <div id="yearLabel" class="year-label">2017</div>
+                </div>
             </div>
         </div>
-        <div id="yearLabel" class="year-label">2017</div>
-
 
         <!-- Iframe Placeholder -->
-        <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"></iframe>
+        <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"
+            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe>
     </section>
 
     <!-- Scroll Prompt Section -->
