@@ -4,7 +4,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Handlee&family=Ojuju:wght@200..800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,465 +12,250 @@
     <style>
         body,
         html {
-            font-family: "Handlee", cursive;
+            font-family: "Open Sans", sans-serif;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
-        }
-
-        header {
-            background: #cee4eaf4;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 0;
-            box-sizing: border-box;
-            display: flex;
-            /* Enable Flexbox */
-            align-items: center;
-            /* Center items vertically */
-            justify-content: flex-end;
-            /* Align items to the right */
-        }
-
-        .title-container {
-            text-align: left;
-            max-width: 600px;
-        }
-
-        .typewriter h1 {
-            color: #fff;
+            height: 100%;
             overflow: hidden;
+            background-color: #c8e6f5;
+        }
+
+        .cover {
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: url('https://your-background-image-url.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: rgb(204, 238, 248);
+            z-index: 1001;
+        }
+
+        .cover h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: rgb(90, 10, 130);
+            overflow: hidden;
+            /* Ensures the content does not expand */
             white-space: nowrap;
-            margin: 0;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end);
+            /* Keeps the text on a single line */
+            border-right: .15em solid orange;
+            /* The typewriter cursor */
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
 
         @keyframes typing {
             from {
-                width: 0;
+                width: 0
             }
 
             to {
-                width: 100%;
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange
             }
         }
 
 
 
-        .typewriter h1 {
-            /* Your existing styles */
-            animation: blink-caret .75s step-end infinite;
-            color: rgb(250, 195, 13);
+        .cover img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            animation: glow 2s ease-in-out infinite alternate;
         }
-
-        .title-container h2 {
-            margin: 10px 0;
-            font-size: 2rem;
-            font-style: italic;
-        }
-
-        .title-container h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: normal;
-            color: #eac130;
-        }
-
-
 
         @keyframes glow {
 
             0%,
             100% {
-                text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 30px #00b3ff, 0 0 40px #00e6ff, 0 0 70px #00e6ff, 0 0 80px #00e6ff, 0 0 100px #00e6ff;
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
             }
 
             50% {
-                text-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff, 0 0 15px #00b3ff, 0 0 20px #00e6ff, 0 0 35px #00e6ff, 0 0 40px #00e6ff, 0 0 50px #00e6ff;
+                filter: drop-shadow(0 0 20px rgba(255, 255, 0, 0.7));
             }
         }
 
-        .h1-glow {
-            animation: glow 2s ease-in-out infinite alternate;
+        .cover button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            background-color: rgb(204, 238, 248);
+            border: none;
+            border-radius: 5px;
+            color: rgb(68, 150, 244);
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        @keyframes bounce {
-            0% {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-
-            60% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            80% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
+        .cover button:hover {
+            background-color: #bb8eef;
         }
 
-
-
-        .bounce span {
-            display: inline-block;
-            animation: bounce 0.8s ease;
+        #main-content {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1s;
+            margin: 35px;
         }
 
-        /* Apply delay to each span for sequential dropping */
-        .bounce span:nth-child(1) {
-            animation-delay: 0.1s;
+        header {
+            position: fixed;
+            /* Keeps the header fixed at the top right corner */
+            top: 0;
+            /* Align to the top */
+            right: 0;
+            /* Align to the right */
+            z-index: 1000;
+            /* Ensures header is on top of other content */
+            padding: 20px;
+            /* Adds some spacing inside the header */
+            background: #c8e6f5;
+            /* Gives a background color, adjust as needed */
+            box-sizing: border-box;
+            /* Makes sure padding doesn't affect the total width */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Aligns navigation items to the right */
         }
-
-        .bounce span:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-
-        /* Continue for each span */
-        @keyframes fadeInScaleUp {
-            from {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .fadeInScaleUp {
-            animation: fadeInScaleUp 1s ease-out;
-        }
-
-
-
-
 
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
-            /* Center the navigation items */
+            justify-content: flex-end;
+            /* Ensures list items are aligned to the right */
         }
 
         nav ul li {
-            margin: 0 10px;
-            /* Adjust spacing around each nav item */
+            margin-left: 20px;
+            /* Adds space between menu items */
         }
 
         nav ul li a {
             text-decoration: none;
             color: rgb(8, 6, 6);
+            /* Color for text, adjust as needed */
             padding: 5px 10px;
-            /* Adjust padding to fit your design */
-            display: block;
-        }
-
-        .slider-container {
-            position: relative;
-            margin: 20px 0;
-        }
-
-        .year-slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 15px;
-            border-radius: 5px;
-            background: #020755;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-        }
-
-        .year-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #FF5733;
-            cursor: grab;
-        }
-
-        .year-slider::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: #FF5733;
-            cursor: grab;
-        }
-
-        .slider-ticks {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
-        .slider-ticks span {
-            position: relative;
-            display: block;
-            text-align: left;
-            width: 1px;
-            background: #FF5733;
-            height: 10px;
-            line-height: 20px;
-            font-size: 15px;
-        }
-
-        .year-label {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .caret {
-            color: #FF5733;
-            /* Change this color to your preference */
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-
-            from,
-            to {
-                color: transparent;
-            }
-
-            50% {
-                color: #FF5733;
-            }
-
-            /* Ensure this matches the caret color */
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 10px;
-            }
-
-            nav ul {
-                justify-content: space-around;
-                /* Adjust based on design preference */
-            }
-
-            nav ul li {
-                margin: 5px 0;
-                /* Adjust for vertical spacing on small screens */
-            }
+            /* Padding around text for better touch target */
         }
 
 
         section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            color: #fff;
-            text-align: center;
-        }
-
-        #Home {
-            background: #cee4eaf4;
-            color: #333;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #Home {
-            /* Existing styles, ensure you're setting the background, color, etc., as you wish */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            /* Align items to the start (left) of the container */
-            justify-content: flex-start;
-            /* Align items to the start (top) of the container */
-            padding-left: 20px;
-            /* Add some padding on the left */
             padding-top: 100px;
-            /* Adjust based on your fixed header's height to prevent overlap */
-        }
-
-        .home-container {
-            display: flex;
-            /* Enables flexbox for the container */
-            width: 100%;
-            /* Take up the full width of the section */
-            max-width: 1200px;
-            /* Adjust based on your design */
-            align-items: center;
-            /* Align items vertically */
-            justify-content: space-between;
-            /* Space out the left and right content */
-        }
-
-        .title-wrapper {
-            text-align: left;
-            margin-left: 20px;
-            /* Optional: Depending on how far from the left you want your titles */
-        }
-
-        .left-content,
-        .right-content {
-            text-align: left;
-            flex: 1;
-            /* Each takes up equal space */
-            padding: 5px;
-            /* Add some padding around content */
-        }
-
-        .typewriter h1,
-        .title-wrapper h2,
-        .title-wrapper h3 {
-            margin: 0;
-            font-size: 2.8rem;
-            /* Removes default margins */
-        }
-
-        .title-wrapper h2 em {
-            font-size: 1.7rem;
-            color: rgb(10, 174, 244)
-                /* Adjust the font size as needed */
-        }
-
-        .title-wrapper h3 {
-            color: #45a5f4;
-            /* Or any other color */
-            font-size: 1.0rem;
-            /* Adjust the font size as needed */
-            margin-top: 10px;
-            /* Adds a little space between the subtitle and the names */
-        }
-
-        #Home img {
-            filter: drop-shadow(0 0 15px rgba(255, 230, 42, 0.7));
-            /* Adjust color and size as needed */
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-        }
-
-
-
-        #Background {
-            background: #cee4eaf4;
-        }
-
-        #Visualizations {
-            background: #cee4eaf4;
-        }
-
-        #Model {
-            background: #cee4eaf4;
-        }
-
-        .subtitle {
-            margin-top: 20px;
-            font-size: 20px;
-            color: rgb(244, 221, 10);
         }
     </style>
 </head>
 
 <body>
+    <div class="cover">
+        <h1 id="typewriter">DISEASE OUTBREAK</h1>
+        <!-- Image source -->
+        <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
+            alt="Lungs Expanding">
+        <button onclick="startExploring()">Start Exploring</button>
+    </div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Background">Background</a></li>
-                <li><a href="#Visualizations">Visualizations</a></li>
-                <li><a href="#Model">Model</a></li>
-            </ul>
-        </nav>
+    <div id="main-content">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Background">Background</a></li>
+                    <li><a href="#Preliminary Research">Preliminary Research</a></li>
+                    <li><a href="#Data Collection and Cleaning">Data Collection and Cleaning</a></li>
+                    <li><a href="#Data Analysis">Data Analysis</a></li>
+                    <li><a href="#Model">Model</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    </header>
 
 
-
-    <section id="Home">
-        <div class="home-container">
-            <div class="left-content">
-                <div class="title-wrapper">
-                    <div class="typewriter">
-                        <h1>Disease Outbreak:</h1>
-                    </div>
-                    <h2><em>Asthma Analysis</em></h2>
-                    <!-- <h3>Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore Ajagbe
+        <section id="Home">
+            <div class="home-container">
+                <div class="left-content">
+                    <div class="title-wrapper">
+                        <div class="typewriter">
+                            <h1>DISEASE OUTBREAK:</h1>
+                        </div>
+                        <h2><em>Asthma Analysis</em></h2>
+                        <!-- <h3>Emily Fu, Tejal Nair, Jennifer Kim, Jibran Khan, Anusha Bishayee, Isabelle Deng, Sore Ajagbe
                     </h3> -->
-                    <!-- Lungs Graphic Placeholder -->
-                    <!-- Image source -->
-                    <img src="https://cdn.sanity.io/images/0b678gck/buoy-public-site/a4fbefe05e84f055b00ddf73aa5c2e30d6fb9b84-2000x1400.png?w=600&q=70&auto=format&dpr=1"
-                        alt="Lungs Expanding" style="margin-top: 20px; max-width: 100%; height: auto;">
+                        <!-- Lungs Graphic Placeholder -->
+                    </div>
                 </div>
-            </div>
-            <div class="right-content">
-                <!-- New text content you want to add on the right -->
-                <div style="color: rgb(176, 84, 84); font-size: larger; text-align: center;">
-                    <p><em>What is Asthma?</em></p>
-                </div>
-                <div style="color: rgb(81, 77, 77); text-align: center;">
-                    <p>Asthma, the chronic respiratory condition marked by recurring challenges in
-                        breathing, has become a
-                        prevalent health concern in the United States. It's a disease that doesn't spread through
-                        contagion,
-                        yet its increasing incidence is undeniably alarming.</p>
-                    <center>
-                        <img src=https://i.pinimg.com/originals/94/ab/af/94abaf23721ca08808b03c7cece5beef.png
-                            alt="Lungs"
-                            style="filter: none; margin-left: auto; margin-right: auto; max-width: 50%; height: 50%;"
-                            </div>
-                    </center>
-                </div>
+                <div class="right-content">
+                    <!-- New text content you want to add on the right -->
+                    <div style="color: rgb(81, 77, 77); text-align: center;">
+                        <center>
+                            <img src=https://i.pinimg.com/originals/94/ab/af/94abaf23721ca08808b03c7cece5beef.png
+                                alt="Lungs"
+                                style="filter: none; margin-left: auto; margin-right: auto; max-width: 30%; height: 30%;"
+                                </div>
+                        </center>
+                    </div>
 
-    </section>
-    <section id="Background">
-        <!-- <div style="color: rgb(176, 84, 84);">
+        </section>
+        <section id="Background">
+            <!-- <div style="color: rgb(176, 84, 84);">
             <p>Background Information</p>
         </div> -->
-        <div style="color: rgb(81, 77, 77); text-align: left;">
-            <p> In the pursuit of advancing public health, general safety, and medical preparedness, the study of
-                infectious diseases has grown to become a critical area of focus for researchers and health
-                professionals worldwide. The complex nature of disease spread, influenced by an array of factors,
-                including but not limited to, socioeconomic status, environment, sex, and age, demands a comprehensive
-                approach to understand and hopefully mitigate its impacts. The Disease Outbreak project aims to delve
-                deep into the patterns of disease outbreaks, predict future trends, and evaluate the effectiveness of
-                various intervention measures. </p>
+            <div style="color: rgb(81, 77, 77); text-align: left;">
+                <p> In the pursuit of advancing public health, general safety, and medical preparedness, the study of
+                    infectious diseases has grown to become a critical area of focus for researchers and health
+                    professionals worldwide. The complex nature of disease spread, influenced by an array of factors,
+                    including but not limited to, socioeconomic status, environment, sex, and age, demands a
+                    comprehensive
+                    approach to understand and hopefully mitigate its impacts. The Disease Outbreak project aims to
+                    delve
+                    deep into the patterns of disease outbreaks, predict future trends, and evaluate the effectiveness
+                    of
+                    various intervention measures. </p>
 
-            <p> Asthma, a prevalent respiratory condition familiar to many, is the specific focus of our research. This
-                decision stems from the widespread impact of asthma and the variability in its prevalence across
-                different populations and geographies. The primary goal of this project is to clarify how asthma affects
-                diverse groups and regions over time. By meticulously analyzing prevalence rates, we aim to uncover
-                underlying trends and patterns, such as seasonal variations and geographical disparities. These analyses
-                will help us identify the populations most at-risk, as well as regions that are disproportionately
-                affected. </p>
+                <p> Asthma, a prevalent respiratory condition familiar to many, is the specific focus of our research.
+                    This
+                    decision stems from the widespread impact of asthma and the variability in its prevalence across
+                    different populations and geographies. The primary goal of this project is to clarify how asthma
+                    affects
+                    diverse groups and regions over time. By meticulously analyzing prevalence rates, we aim to uncover
+                    underlying trends and patterns, such as seasonal variations and geographical disparities. These
+                    analyses
+                    will help us identify the populations most at-risk, as well as regions that are disproportionately
+                    affected. </p>
 
-            <p> Moreover, we are also interested in evaluating the efficacy of public health measures, such as air
-                quality regulations and asthma education programs, to ascertain their role in reducing asthma incidence.
-                Employing advanced predictive modeling techniques, our project seeks to enhance our ability to predict
-                asthma prevalence with some precision. </p>
+                <p> Moreover, we are also interested in evaluating the efficacy of public health measures, such as air
+                    quality regulations and asthma education programs, to ascertain their role in reducing asthma
+                    incidence.
+                    Employing advanced predictive modeling techniques, our project seeks to enhance our ability to
+                    predict
+                    asthma prevalence with some precision. </p>
 
-            <p> Through this rigorous research and analysis, we hope to provide valuable insights into asthma prevalence
-                in the United States.
-            </p>
-        </div>
-
-        <div class="home-container">
+                <p> Through this rigorous research and analysis, we hope to provide valuable insights into asthma
+                    prevalence
+                    in the United States.
+                </p>
+            </div>
+            <!-- uncomment this for the asthma prevalence graph! -->
+            <!-- <div class="home-container">
             <div class="left-content">
                 <div style="color:rgb(250, 195, 13); text-align: center;">
                     <p>Asthma prevalence through the years by state:</p>
@@ -485,79 +270,168 @@
                     <div id="yearLabel" class="year-label">2017</div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <!-- Iframe Placeholder -->
-        <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"
-            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe>
-    </section>
+            <!-- Iframe Placeholder -->
+            <!-- <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"
+            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe> -->
+        </section>
+        <section id="Preliminary Research">
+            <div style="color: rgb(176, 84, 84);">
+                <p>Preliminary Research</p>
+            </div>
+            <div style="color: rgb(81, 77, 77); text-align: left;">
+                <p> Asthma is a chronic disease impacting respiratory airways in the lungs: inflammation causes the
+                    airways
+                    to narrow, making breathing difficult, and causing coughing, wheezing, and shortness of breath. 8.2%
+                    of
+                    Americans have asthma, and approximately 300 million people worldwide are asthmatic. There is no
+                    cure
+                    for asthma, only ways to manage the symptoms to live a normal life.
+                </p>
 
-    <section id="Visualizations">
-        <p>Visualizations and Analysis</p>
-    </section>
+                <p> Scientists are still seeking the true cause of asthma, but many factors are associated with its
+                    prevalence. Asthma presumably has a genetic factor, as an individual with an asthmatic parent is
+                    three
+                    to six times more likely to develop asthma than an individual without one. Air pollution and
+                    exposure to
+                    smog may raise risk for asthma as well, which has historically led people to believe that those who
+                    live
+                    in urban areas incur a higher risk of developing asthma. </p>
 
-    <section id="Model">
-        <p>Model</p>
-    </section>
+                <p> Additionally, specific groups of people are disproportionately affected by asthma. Low-income and
+                    senior
+                    adults have the highest asthma rates, deaths, and hospitalizations. Black, Hispanic, and Native
+                    Americans are affected by asthma more than other races. People who are overweight and obese are at a
+                    greater risk for asthma. Some additional risk factors include smoking (or having a mother who smoked
+                    during pregnancy), viral respiratory infections, allergies, and many more. There is even
+                    occupational
+                    asthma, which is triggered by irritants in the workplace such as vapors, fumes, and dust. </p>
 
-    <script>
-        const typewriterElement = document.querySelector('.typewriter h1');
-        const text = 'Disease Outbreak ';
-        let index = 0;
-        let direction = 'forward';
-        let caretVisible = true;
+            </div>
+        </section>
+        <section id="Data Collection and Cleaning">
+            <div style="color: rgb(176, 84, 84);">
+                <p>Data Collection and Cleaning</p>
+            </div>
+            <div style="color: rgb(81, 77, 77); text-align: left;">
+                <p> The majority of our visualizations incorporated data from the CDC Data Explorer tool, which allows
+                    one
+                    to directly download U.S state-based data in a CSV format. CSVs were downloaded according to the
+                    measure
+                    being studied, which ranged subjects such as the distribution of the asthmatic population of male
+                    adults, to presence of formaldehyde in the air geographically. After being collected, the CSVs were
+                    read
+                    into RStudio, and appropriate R packages were installed. Once all datasets were imported into an
+                    RMarkdown file, the variable values needed to be subsetted in order to remove trailing percentage
+                    signs,
+                    and subsequently converted from an alphanumeric string to a numerical factor. After this processing,
+                    the
+                    datasets were able to flexibly be plotted in various visualizations, utilizing the pre-installed
+                    packages.
+                </p>
 
-        function updateText() {
-            const displayText = text.slice(0, index) + (caretVisible ? '|' : '');
-            typewriterElement.textContent = displayText;
-            caretVisible = !caretVisible; // Toggle the caret visibility
-        }
+                <p> However, other visualizations utilized the [Tejal fills in how she did her part] </p>
 
-        function typewriterEffect() {
-            setTimeout(() => {
-                if (direction === 'forward') {
-                    if (index < text.length) {
-                        index++;
+            </div>
+        </section>
+
+        <section id="Data Analysis">
+            <p>Visualizations and Analysis</p>
+        </section>
+
+        <section id="Model">
+            <p>Model</p>
+        </section>
+
+        <script>
+            const typewriterElement = document.querySelector('.typewriter h1');
+            const text = 'DISEASE OUTBREAK';
+            let index = 0;
+            let direction = 'forward';
+            let caretVisible = true;
+
+            function updateText() {
+                const displayText = text.slice(0, index) + (caretVisible ? '|' : '');
+                typewriterElement.textContent = displayText;
+                caretVisible = !caretVisible; // Toggle the caret visibility
+            }
+
+            function typewriterEffect() {
+                setTimeout(() => {
+                    if (direction === 'forward') {
+                        if (index < text.length) {
+                            index++;
+                        } else {
+                            setTimeout(() => { direction = 'backward'; }, 1000);
+                        }
                     } else {
-                        setTimeout(() => { direction = 'backward'; }, 1000);
+                        if (index > 1) {
+                            index--;
+                        } else {
+                            setTimeout(() => { direction = 'forward'; }, 1000);
+                        }
                     }
-                } else {
-                    if (index > 1) {
-                        index--;
+                    updateText();
+                    typewriterEffect();
+                }, direction === 'forward' ? 120 : 60);
+            }
+
+            // Start the typewriter effect
+            typewriterEffect();
+        </script>
+
+
+
+        <script>
+            document.getElementById('yearSlider').addEventListener('input', function () {
+                var year = this.value;
+                var yearUrls = {
+                    "2017": "https://pages.github.coecis.cornell.edu/tn292/asthma2017/",
+                    "2018": "https://pages.github.coecis.cornell.edu/tn292/asthma2018/",
+                    "2019": "https://pages.github.coecis.cornell.edu/tn292/asthma2019/",
+                    "2020": "https://pages.github.coecis.cornell.edu/tn292/asthma2020/",
+                    "2021": "https://pages.github.coecis.cornell.edu/tn292/asthma2021/",
+                    // Add more mappings as needed
+                };
+
+                // Update the iframe's src to the selected year's URL
+                document.getElementById('yearIframe').src = yearUrls[year];
+
+                // Update the year label to display the selected year
+                document.getElementById('yearLabel').innerText = year;
+            });
+        </script>
+
+        <script>
+            function startExploring() {
+                document.querySelector('.cover').style.display = 'none';
+                var mainContent = document.getElementById('main-content');
+                mainContent.style.visibility = 'visible';
+                mainContent.style.opacity = 1;
+                document.body.style.overflow = 'auto';
+            }
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const typewriterElement = document.getElementById('typewriter');
+                const fullText = '        ';
+                let currentIndex = 0;
+
+                function typeNextCharacter() {
+                    if (currentIndex < fullText.length) {
+                        typewriterElement.textContent += fullText.charAt(currentIndex);
+                        currentIndex++;
+                        setTimeout(typeNextCharacter, 150); // Typing speed
                     } else {
-                        setTimeout(() => { direction = 'forward'; }, 1000);
+                        typewriterElement.style.borderRight = 'none'; // Hide the caret once typing is done
                     }
                 }
-                updateText();
-                typewriterEffect();
-            }, direction === 'forward' ? 120 : 60);
-        }
 
-        // Start the typewriter effect
-        typewriterEffect();
-    </script>
-
-
-
-    <script>
-        document.getElementById('yearSlider').addEventListener('input', function () {
-            var year = this.value;
-            var yearUrls = {
-                "2017": "https://pages.github.coecis.cornell.edu/tn292/asthma2017/",
-                "2018": "https://pages.github.coecis.cornell.edu/tn292/asthma2018/",
-                "2019": "https://pages.github.coecis.cornell.edu/tn292/asthma2019/",
-                "2020": "https://pages.github.coecis.cornell.edu/tn292/asthma2020/",
-                "2021": "https://pages.github.coecis.cornell.edu/tn292/asthma2021/",
-                // Add more mappings as needed
-            };
-
-            // Update the iframe's src to the selected year's URL
-            document.getElementById('yearIframe').src = yearUrls[year];
-
-            // Update the year label to display the selected year
-            document.getElementById('yearLabel').innerText = year;
-        });
-    </script>
+                typeNextCharacter(); // Start the typing effect
+            });
+        </script>
 
 
 
