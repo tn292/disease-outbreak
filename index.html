@@ -136,6 +136,16 @@
             /* Aligns navigation items to the right */
         }
 
+        .menu-icon {
+            display: none;
+            /* Hide by default, will be shown in a media query for mobile */
+            cursor: pointer;
+            font-size: 30px;
+            /* Makes the icon larger and easier to interact with */
+            user-select: none;
+            /* Prevents text selection */
+        }
+
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -159,6 +169,11 @@
         }
 
         @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                /* Show the menu icon */
+            }
+
             .cover h1 {
                 font-size: 2rem;
                 /* Smaller font size for small screens */
