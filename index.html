@@ -115,31 +115,47 @@
             margin: 35px;
         }
 
-        /* Responsive adjustments for screens narrower than 768px */
-        @media (max-width: 768px) {
-            header {
-                position: static;
-                /* Optional: makes the header scroll with the page */
-                padding: 10px 20px;
-                /* Smaller padding for smaller screens */
-            }
+        header {
+            position: fixed;
+            /* Keeps the header fixed at the top right corner */
+            top: 0;
+            /* Align to the top */
+            right: 0;
+            /* Align to the right */
+            z-index: 1000;
+            /* Ensures header is on top of other content */
+            padding: 20px;
+            /* Adds some spacing inside the header */
+            background: #c8e6f5;
+            /* Gives a background color, adjust as needed */
+            box-sizing: border-box;
+            /* Makes sure padding doesn't affect the total width */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            /* Aligns navigation items to the right */
+        }
 
-            #main-content {
-                margin: 10px 20px;
-                /* Smaller margins for content on small screens */
-            }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            /* Ensures list items are aligned to the right */
+        }
 
-            nav ul {
-                flex-direction: column;
-                /* Stack nav items vertically */
-                align-items: center;
-                /* Center alignment for nav items */
-            }
+        nav ul li {
+            margin-left: 20px;
+            /* Adds space between menu items */
+        }
 
-            nav ul li {
-                margin: 5px 0;
-                /* Less space between menu items */
-            }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(8, 6, 6);
+            /* Color for text, adjust as needed */
+            padding: 5px 10px;
+            /* Padding around text for better touch target */
         }
 
 
@@ -160,10 +176,8 @@
 
     <div id="main-content">
         <header>
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <nav>
-                <ul id="menu">
-                    <li><a href="#Home">Home</a></li>
+                <ul>
                     <li><a href="#Background">Background</a></li>
                     <li><a href="#Preliminary Research">Preliminary Research</a></li>
                     <li><a href="#Data Collection and Cleaning">Data Collection and Cleaning</a></li>
@@ -172,6 +186,7 @@
                 </ul>
             </nav>
         </header>
+
 
 
         <section id="Background">
@@ -425,17 +440,6 @@
 
                 typeNextCharacter(); // Start the typing effect
             });
-        </script>
-
-        <script>
-            function toggleMenu() {
-                var menu = document.getElementById('menu');
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    menu.style.display = 'block';
-                }
-            }
         </script>
 
 
