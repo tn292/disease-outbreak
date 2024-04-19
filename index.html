@@ -181,14 +181,23 @@
             }
 
             header {
+                text-align: right;
+                /* Aligns the menu icon to the right */
                 padding: 10px 20px;
-                /* Reduce padding on small screens */
+                /* Adjusts padding */
             }
 
             nav ul {
-                flex-direction: row;
-                /* Keeps nav items in a row but could be changed to column if needed */
-                justify-content: flex-end;
+                position: absolute;
+                background-color: white;
+                top: 50px;
+                /* Position right below the header */
+                right: 0;
+                /* Aligns menu to the right */
+                width: 100%;
+                /* Full width of the screen */
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+                /* Adds a subtle shadow */
             }
 
             nav ul li {
