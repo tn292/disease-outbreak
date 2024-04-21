@@ -3,6 +3,8 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
@@ -13,7 +15,7 @@
         body,
         html {
             font-family: "Open Sans", sans-serif;
-            margin: 0;
+            margin: 20px;
             padding: 0;
             scroll-behavior: smooth;
             /* height: 100%; */
@@ -216,6 +218,49 @@
         section {
             padding-top: 100px;
         }
+
+        .container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .fixed-image {
+            flex: 1;
+            position: sticky;
+            top: 0;
+            /* Adjust this value as needed */
+            align-self: start;
+            /* Keeps the image aligned to the top */
+        }
+
+        .scrolling-content {
+            flex: 2;
+            /* Takes twice the space of the image container */
+            max-width: 600px;
+            /* Or however wide you want the text area to be */
+            overflow-y: auto;
+            /* Allows for scrolling */
+            padding: 0 20px;
+            /* Adds some padding */
+            margin-left: 20px;
+            /* Adds a gap between the image and text */
+        }
+
+        /* Optional: Add some responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .fixed-image {
+                position: relative;
+                /* Image is no longer sticky on small screens */
+            }
+
+            .scrolling-content {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 
@@ -270,47 +315,23 @@
 
 
                 <div style="color: rgb(81, 77, 77); text-align: left;">
-                    <p> In the pursuit of advancing public health, general safety, and medical preparedness, the
-                        study of
-                        infectious diseases has grown to become a critical area of focus for researchers and health
+                    <p> In the pursuit of advancing public health, general safety, and medical preparedness, the study
+                        of infectious diseases has grown to become a critical area of focus for researchers and health
                         professionals worldwide. The complex nature of disease spread, influenced by an array of
-                        factors,
-                        including but not limited to, socioeconomic status, environment, sex, and age, demands a
-                        comprehensive
-                        approach to understand and hopefully mitigate its impacts. The Disease Outbreak project aims
-                        to
-                        delve
-                        deep into the patterns of disease outbreaks, predict future trends, and evaluate the
-                        effectiveness
-                        of
-                        various intervention measures. </p>
+                        factors, including but not limited to, socioeconomic status, environment, sex, and age, demands
+                        a comprehensive approach to understand and hopefully mitigate its impacts. The Disease Outbreak
+                        project aims to delve deep into the patterns of disease outbreaks, investigate the reasons for
+                        these trends, and predict possible outcomes. </p>
 
                     <p> Asthma, a prevalent respiratory condition familiar to many, is the specific focus of our
-                        research.
-                        This
-                        decision stems from the widespread impact of asthma and the variability in its prevalence
-                        across
-                        different populations and geographies. The primary goal of this project is to clarify how
-                        asthma
-                        affects
-                        diverse groups and regions over time. By meticulously analyzing prevalence rates, we aim to
-                        uncover
-                        underlying trends and patterns, such as seasonal variations and geographical disparities.
-                        These
-                        analyses
-                        will help us identify the populations most at-risk, as well as regions that are
-                        disproportionately
-                        affected. </p>
-
-                    <p> Moreover, we are also interested in evaluating the efficacy of public health measures, such
-                        as air
-                        quality regulations and asthma education programs, to ascertain their role in reducing
-                        asthma
-                        incidence.
-                        Employing advanced predictive modeling techniques, our project seeks to enhance our ability
-                        to
-                        predict
-                        asthma prevalence with some precision. </p>
+                        research. This decision stems from the widespread impact of asthma and the variability in its
+                        prevalence across different populations and geographies. The primary goal of this project is to
+                        investigate how asthma affects diverse groups and regions over time. By analyzing prevalence
+                        rates, we aim to uncover underlying trends and patterns, such as seasonal variations and
+                        geographical disparities. These analyses will help us identify the populations most at-risk, as
+                        well as regions that are disproportionately affected. Employing advanced predictive modeling
+                        techniques, our project seeks to enhance our ability to predict asthma prevalence with some
+                        precision. </p>
 
                     <p> Through this rigorous research and analysis, we hope to provide valuable insights into
                         asthma
@@ -345,32 +366,37 @@
             <p>Preliminary Research</p>
         </div>
         <div style="color: rgb(81, 77, 77); text-align: left;">
-            <p> Asthma is a chronic disease impacting respiratory airways in the lungs: inflammation causes the
-                airways
-                to narrow, making breathing difficult, and causing coughing, wheezing, and shortness of breath. 8.2%
-                of
-                Americans have asthma, and approximately 300 million people worldwide are asthmatic. There is no
-                cure
-                for asthma, only ways to manage the symptoms to live a normal life.
+            <p> Asthma is a chronic disease impacting respiratory airways in the lungs: inflammation causes the airways
+                to narrow, making breathing difficult, and causing coughing, wheezing, and shortness of breath. 8.2% of
+                Americans have asthma, meaning around 27 million people in the United States and approximately 300
+                million people worldwide are asthmatic. There is no cure for asthma, only ways to manage the symptoms to
+                live a normal life.
             </p>
 
             <p> Scientists are still seeking the true cause of asthma, but many factors are associated with its
-                prevalence. Asthma presumably has a genetic factor, as an individual with an asthmatic parent is
-                three
-                to six times more likely to develop asthma than an individual without one. Air pollution and
-                exposure to
-                smog may raise risk for asthma as well, which has historically led people to believe that those who
-                live
+                prevalence. Asthma presumably has a genetic factor, as an individual with an asthmatic parent is three
+                to six times more likely to develop asthma than an individual without one. Air pollution and exposure to
+                smog may raise risk for asthma as well, which has historically led people to believe that those who live
                 in urban areas incur a higher risk of developing asthma. </p>
 
-            <p> Additionally, specific groups of people are disproportionately affected by asthma. Low-income and
-                senior
+            <p> Additionally, specific groups of people are disproportionately affected by asthma. Low-income and senior
                 adults have the highest asthma rates, deaths, and hospitalizations. Black, Hispanic, and Native
                 Americans are affected by asthma more than other races. People who are overweight and obese are at a
                 greater risk for asthma. Some additional risk factors include smoking (or having a mother who smoked
-                during pregnancy), viral respiratory infections, allergies, and many more. There is even
-                occupational
+                during pregnancy), viral respiratory infections, allergies, and many more. There is even occupational
                 asthma, which is triggered by irritants in the workplace such as vapors, fumes, and dust. </p>
+
+            <p> Along with factors that may lead to a larger incidence of asthma, scientists have also examined
+                comorbidities with other diseases. A comorbidity is the simultaneous presence of a disease with another
+                disease, which can potentially alter the symptoms or signs of both diseases. One such example is with
+                Chronic Obstructive Pulmonary Disease (COPD), which can yield similar symptoms to asthma, including
+                wheezing, chronic coughing, and shortness of breath. This disease affects 11.2 million people in
+                America. The two diseases have shown such overlap and difficulty differentiating between the two that a
+                new diagnosis known as Asthma-COPD Overlap Syndrome (ACOS) emerged. Individuals with ACOS have been
+                shown to exhibit more severe and frequent symptoms than those with asthma or COPD alone. Another
+                comorbidity which seems to be worth analyzing is obesity, which affects 39.6% of American adults.
+                Obesity is associated with low-grade inflammation (including of the airways), along with an increased
+                amount of adipose tissue, which alters the amount of inflammation hormones cause in the body.</p>
 
         </div>
     </section>
@@ -379,33 +405,79 @@
             <p>Data Collection and Cleaning</p>
         </div>
         <div style="color: rgb(81, 77, 77); text-align: left;">
-            <p> The majority of our visualizations incorporated data from the CDC Data Explorer tool, which allows
-                one
-                to directly download U.S state-based data in a CSV format. CSVs were downloaded according to the
-                measure
-                being studied, which ranged subjects such as the distribution of the asthmatic population of male
-                adults, to presence of formaldehyde in the air geographically. After being collected, the CSVs were
-                read
-                into RStudio, and appropriate R packages were installed. Once all datasets were imported into an
-                RMarkdown file, the variable values needed to be subsetted in order to remove trailing percentage
-                signs,
-                and subsequently converted from an alphanumeric string to a numerical factor. After this processing,
-                the
-                datasets were able to flexibly be plotted in various visualizations, utilizing the pre-installed
-                packages.
+            <p> The majority of our visualizations incorporated data from the CDC Data Explorer
+                tool, which allows one to directly download U.S state-based data in a CSV format. CSVs were downloaded
+                according to the measure being studied, which ranged subjects such as the distribution of the asthmatic
+                population of male adults, to presence of formaldehyde in the air geographically. After being collected,
+                the CSVs were read into RStudio, and appropriate R packages were installed. Once all datasets were
+                imported into an RMarkdown file, the variable values needed to be subsetted in order to remove trailing
+                percentage signs, and subsequently converted from an alphanumeric string to a numerical factor. After
+                this processing, the datasets were able to flexibly be plotted in various visualizations, utilizing the
+                pre-installed packages.
+
             </p>
 
-            <p> However, other visualizations utilized the [Tejal fills in how she did her part] </p>
+            <p> However, other visualizations utilized Python's pandas library to import data from CSV files. We read
+                the CSV files into DataFrames—a versatile data structure that allows for easy manipulation of the data.
+                We then were able to address issues such as missing values, incorrect data types, duplicate entries and
+                such using dataframe methods. </p>
+            <p>
+                Once the data was cleaned and processed, we visualized it using Folium, a Python library that aids in
+                creating interactive maps using the Leaflet.js library. To map our datasets with Folium, the DataFrame
+                we acquired can be iterated over to extract geographic coordinates and other information, which are then
+                used to add markers to a Folium map.
+            </p>
 
         </div>
     </section>
 
     <section id="Data Analysis">
-        <p>Visualizations and Analysis</p>
+        <div style="color: rgb(176, 84, 84);">
+            <p>Exploratory Data Analysis</p>
+        </div>
+        <div class="container">
+            <div class="fixed-image">
+                <!-- Your image goes here -->
+                <img src="https://github.coecis.cornell.edu/tn292/asthma_prev/blob/main/asthma_prev.jpg?raw=true"
+                    alt="Distribution of Asthmatic Adults in the USA">
+            </div>
+            <div class="scrolling-content">
+                <!-- Your text content goes here -->
+                <p>Looking at the visual, the darkest regions correspond with areas of the highest asthmatic residence.
+                    These can be seen to be the Northeast, the Northwest, and Oregon. In contrast, fewer proportions of
+                    asthmatic adults are found in the Midwest region and Texas.</p>
+                <p>The Northeast region of Lubbock County appears to have concrete batch plants, which are potential
+                    sources of particulate matter (PM 2.5) emissions. Research has shown that PM 2.5 is a significant
+                    contributor to asthma hospitalizations. The study cited indicates that even a small increase in PM
+                    2.5 levels is associated with a substantial rise in the odds of having an asthma diagnosis.
+                </p>
+                <p>
+                    The high prevalence of asthma in the U.S. Pacific Northwest, notably in areas like Seattle, can be
+                    attributed to several factors, including the significant wildfire activity in the region. Wildfires
+                    generate substantial amounts of smoke, leading to poor air quality and exacerbating respiratory
+                    conditions like asthma. Additionally, industrial pollution and traffic congestion in urban areas
+                    contribute to air pollution, further worsening respiratory health. Socioeconomic disparities, such
+                    as poverty and limited access to healthcare, exacerbate asthma prevalence, particularly in
+                    vulnerable populations. These factors underscore the urgent need for comprehensive strategies to
+                    address the impacts of wildfires, improve air quality, and reduce socioeconomic inequities to
+                    mitigate asthma prevalence in the Pacific Northwest.
+
+                </p>
+                <!-- Repeat with more paragraphs as needed -->
+            </div>
+        </div>
+        <div>
+            <canvas id="asthmaChart"></canvas>
+        </div>
+        <button onclick="updateChartData('children')">Children</button>
+        <button onclick="updateChartData('adults')">Adults</button>
+        <button onclick="updateChartData('seniors')">Seniors</button>
     </section>
 
     <section id="Model">
-        <p>Model</p>
+        <div style="color: rgb(176, 84, 84);">
+            <p>Model</p>
+        </div>
     </section>
 
     <script>
@@ -507,6 +579,53 @@
             }
         }
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var ctx = document.getElementById('asthmaChart').getContext('2d');
+            var asthmaChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Male', 'Female'],
+                    datasets: [{
+                        label: 'Asthma Prevalence',
+                        data: [9.2, 6.4], // Default to children data
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 99, 132, 0.6)'
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: true, // Maintains width/height ratio
+                    aspectRatio: 5, // Adjust aspect ratio to control size
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            suggestedMax: 15 // Adjust max value based on your data needs
+                        }
+                    }
+                }
+            });
+
+            // Function to update chart data
+            window.updateChartData = function (group) {
+                var data = {
+                    'children': [9.2, 6.4],
+                    'adults': [6.2, 10.4],
+                    'seniors': [4.9, 9.4]
+                };
+                asthmaChart.data.datasets[0].data = data[group];
+                asthmaChart.update();
+            };
+        });
+    </script>
+
+
 
 
 
