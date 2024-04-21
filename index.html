@@ -117,6 +117,70 @@
             margin: 35px;
         }
 
+        .slider-container {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .year-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            border-radius: 5px;
+            background: #020755;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .year-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #480855;
+            cursor: grab;
+        }
+
+        .year-slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #6b0881;
+            cursor: grab;
+        }
+
+        .slider-ticks {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .slider-ticks span {
+            position: relative;
+            display: block;
+            text-align: left;
+            width: 1px;
+            background: #69049f;
+            height: 10px;
+            line-height: 20px;
+            font-size: 15px;
+        }
+
+        .year-label {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .caret {
+            color: #6709c5;
+            /* Change this color to your preference */
+            animation: blink 1s step-end infinite;
+        }
+
+
         header {
             position: fixed;
             /* Keeps the header fixed at the top right corner */
@@ -219,47 +283,37 @@
             padding-top: 100px;
         }
 
+
         .container {
             display: flex;
             align-items: flex-start;
+            min-height: 100vh;
+            /* Ensure there's enough height for sticky to work */
         }
 
         .fixed-image {
-            flex: 1;
+            position: -webkit-sticky;
+            /* for Safari */
             position: sticky;
             top: 0;
-            /* Adjust this value as needed */
-            align-self: start;
-            /* Keeps the image aligned to the top */
+            align-self: flex-start;
+            width: 50%;
+            /* or whatever width you want */
+            height: auto;
+            /* to maintain aspect ratio */
+            z-index: 10;
+            /* ensure it's above other content */
         }
 
         .scrolling-content {
-            flex: 2;
-            /* Takes twice the space of the image container */
-            max-width: 600px;
-            /* Or however wide you want the text area to be */
+            flex: 1;
             overflow-y: auto;
-            /* Allows for scrolling */
-            padding: 0 20px;
-            /* Adds some padding */
-            margin-left: 20px;
-            /* Adds a gap between the image and text */
-        }
-
-        /* Optional: Add some responsive design */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .fixed-image {
-                position: relative;
-                /* Image is no longer sticky on small screens */
-            }
-
-            .scrolling-content {
-                margin-left: 0;
-            }
+            height: 100vh;
+            /* make sure this is tall enough for scrolling */
+            padding-left: 20px;
+            /* give some space from the image */
+            margin-left: auto;
+            /* this will push the content to the right of the image */
         }
     </style>
 </head>
@@ -339,27 +393,6 @@
                         in the United States.
                     </p>
                 </div>
-                <!-- uncomment this for the asthma prevalence graph! -->
-                <!-- <div class="home-container">
-            <div class="left-content">
-                <div style="color:rgb(250, 195, 13); text-align: center;">
-                    <p>Asthma prevalence through the years by state:</p>
-                </div>
-                <div class="slider-container">
-                    <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
-                    <div class="slider-ticks" , style="color: #FF5733;">
-                        <span>2017</span><span>2018</span><span>2019</span><span>2020</span><span>2021</span>
-                    </div>
-                </div>
-                <div style="color:#00b3ff">
-                    <div id="yearLabel" class="year-label">2017</div>
-                </div>
-            </div>
-        </div> -->
-
-                <!-- Iframe Placeholder -->
-                <!-- <iframe id="yearIframe" width="600" height="400" style="border: none; margin-top: 20px;"
-            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe> -->
     </section>
     <section id="Preliminary Research">
         <div style="color: rgb(176, 84, 84);">
@@ -438,10 +471,10 @@
         <div class="container">
             <div class="fixed-image">
                 <!-- Your image goes here -->
-                <img src="https://github.coecis.cornell.edu/tn292/asthma_prev/blob/main/asthma_prev.jpg?raw=true"
-                    alt="Distribution of Asthmatic Adults in the USA">
+                <img src="https://github.com/tn292/asthma_prev/blob/main/asthma_prev.jpg?raw=true"
+                    alt="Distribution of Asthmatic Adults in the USA" style="width: 100%; height: auto;"">
             </div>
-            <div class="scrolling-content">
+            <div class=" scrolling-content">
                 <!-- Your text content goes here -->
                 <p>Looking at the visual, the darkest regions correspond with areas of the highest asthmatic residence.
                     These can be seen to be the Northeast, the Northwest, and Oregon. In contrast, fewer proportions of
@@ -463,15 +496,47 @@
                     mitigate asthma prevalence in the Pacific Northwest.
 
                 </p>
-                <!-- Repeat with more paragraphs as needed -->
             </div>
         </div>
+        <div class="home-container">
+            <div style="color:rgb(60, 13, 250); text-align: center;">
+                <p>Asthma prevalence through the years by state:</p>
+            </div>
+            <div class="slider-container">
+                <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
+                <div class="slider-ticks" , style="color: #FF5733;">
+                    <span> </span><span> </span><span> </span><span> </span><span> </span>
+                </div>
+            </div>
+            <div style="color:#7b00ff">
+                <div id="yearLabel" class="year-label">2017</div>
+            </div>
+
+        </div>
+        <iframe id="yearIframe" width="600" height="400" style="border: none; margin: auto;display: block; "
+            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe>
+
+
+        <p>
+            [insert description of trends]
+        </p>
+        <p>
+            [inset analysis of trends]
+        </p>
+
         <div>
             <canvas id="asthmaChart"></canvas>
         </div>
         <button onclick="updateChartData('children')">Children</button>
         <button onclick="updateChartData('adults')">Adults</button>
         <button onclick="updateChartData('seniors')">Seniors</button>
+
+
+
+
+
+
+
     </section>
 
     <section id="Model">
