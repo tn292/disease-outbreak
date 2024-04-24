@@ -370,7 +370,7 @@
 
                 <div style="color: rgb(81, 77, 77); text-align: left;">
                     <p> In the pursuit of advancing public health, general safety, and medical preparedness, the study
-                        of infectious diseases has grown to become a critical area of focus for researchers and health
+                        of diseases has grown to become a critical area of focus for researchers and health
                         professionals worldwide. The complex nature of disease spread, influenced by an array of
                         factors, including but not limited to, socioeconomic status, environment, sex, and age, demands
                         a comprehensive approach to understand and hopefully mitigate its impacts. The Disease Outbreak
@@ -385,13 +385,9 @@
                         geographical disparities. These analyses will help us identify the populations most at-risk, as
                         well as regions that are disproportionately affected. Employing advanced predictive modeling
                         techniques, our project seeks to enhance our ability to predict asthma prevalence with some
-                        precision. </p>
+                        precision. Through this rigorous research and analysis, we hope to provide valuable insights
+                        into asthma prevalence in the United States. </p>
 
-                    <p> Through this rigorous research and analysis, we hope to provide valuable insights into
-                        asthma
-                        prevalence
-                        in the United States.
-                    </p>
                 </div>
     </section>
     <section id="Preliminary Research">
@@ -400,36 +396,41 @@
         </div>
         <div style="color: rgb(81, 77, 77); text-align: left;">
             <p> Asthma is a chronic disease impacting respiratory airways in the lungs: inflammation causes the airways
-                to narrow, making breathing difficult, and causing coughing, wheezing, and shortness of breath. 8.2% of
-                Americans have asthma, meaning around 27 million people in the United States and approximately 300
-                million people worldwide are asthmatic. There is no cure for asthma, only ways to manage the symptoms to
-                live a normal life.
+                to narrow, making breathing difficult, and subsequently induces coughing, wheezing, and shortness of
+                breath. Approximately 7.7% of Americans have asthma according to national data from 2021 , equating to
+                roughly 25 million people in the United States (CDC, 2023); additionally, approximately 300 million
+                people worldwide are asthmatic as well. (Braman, 2006) While studies have not pinpointed a concrete cure
+                for asthma, there are still ways to manage the systems to live a normal life.
+
             </p>
 
-            <p> Scientists are still seeking the true cause of asthma, but many factors are associated with its
-                prevalence. Asthma presumably has a genetic factor, as an individual with an asthmatic parent is three
-                to six times more likely to develop asthma than an individual without one. Air pollution and exposure to
-                smog may raise risk for asthma as well, which has historically led people to believe that those who live
-                in urban areas incur a higher risk of developing asthma. </p>
+            <p> Scientists are still seeking the true cause of asthma, but many factors are linked with its
+                distribution. Asthma presumably has a genetic factor, as an individual with an asthmatic parent is three
+                to six times more likely to develop asthma than an individual without one. (American Lung Association,
+                2023) Air pollution and exposure to smog may raise risk for inducing asthma as well, which has
+                historically led people to believe that those who live in urban areas incur a higher risk of developing
+                asthma.
+            </p>
 
             <p> Additionally, specific groups of people are disproportionately affected by asthma. Low-income and senior
-                adults have the highest asthma rates, deaths, and hospitalizations. Black, Hispanic, and Native
-                Americans are affected by asthma more than other races. People who are overweight and obese are at a
-                greater risk for asthma. Some additional risk factors include smoking (or having a mother who smoked
-                during pregnancy), viral respiratory infections, allergies, and many more. There is even occupational
-                asthma, which is triggered by irritants in the workplace such as vapors, fumes, and dust. </p>
+                adults have the highest asthma rates, deaths, and hospitalizations. People in the overweight and obese
+                weight categories are at a greater risk for contracting asthma. Some additional risk factors include
+                smoking (or having a mother who smoked during pregnancy), viral respiratory infections, and allergies.
+                There is even a subset of the disease known as occupational asthma, which is specifically triggered by
+                irritants in the workplace such as vapors, fumes, and dust. </p>
 
             <p> Along with factors that may lead to a larger incidence of asthma, scientists have also examined
-                comorbidities with other diseases. A comorbidity is the simultaneous presence of a disease with another
-                disease, which can potentially alter the symptoms or signs of both diseases. One such example is with
-                Chronic Obstructive Pulmonary Disease (COPD), which can yield similar symptoms to asthma, including
-                wheezing, chronic coughing, and shortness of breath. This disease affects 11.2 million people in
-                America. The two diseases have shown such overlap and difficulty differentiating between the two that a
-                new diagnosis known as Asthma-COPD Overlap Syndrome (ACOS) emerged. Individuals with ACOS have been
-                shown to exhibit more severe and frequent symptoms than those with asthma or COPD alone. Another
-                comorbidity which seems to be worth analyzing is obesity, which affects 39.6% of American adults.
-                Obesity is associated with low-grade inflammation (including of the airways), along with an increased
-                amount of adipose tissue, which alters the amount of inflammation hormones cause in the body.</p>
+                comorbidities of asthma. A comorbidity is the simultaneous presence of one specific disease with
+                another, which can potentially alter the symptoms or signs of both diseases. One such example of a
+                comorbidity with asthma is Chronic Obstructive Pulmonary Disease (COPD), which yields many similar
+                symptoms to asthma, including wheezing, chronic coughing, and shortness of breath. This disease affects
+                11.2 million people in America (American Lung Association, 2023). The two diseases have shown such
+                overlap, and great difficulty differentiating between the two has become so prevalent, a new diagnosis
+                known as Asthma-COPD Overlap Syndrome (ACOS) has emerged (American Lung Association, 2023). Individuals
+                with ACOS have been shown to exhibit more severe and frequent symptoms than those with asthma or COPD
+                alone. Another comorbidity worth analyzing is obesity, which affects 39.6% of American adults. Obesity
+                is associated with low-grade inflammation (including of the airways), along with an increased amount of
+                adipose tissue, which alters the amount of inflammation hormones cause in the body.</p>
 
         </div>
     </section>
@@ -440,24 +441,25 @@
         <div style="color: rgb(81, 77, 77); text-align: left;">
             <p> The majority of our visualizations incorporated data from the CDC Data Explorer
                 tool, which allows one to directly download U.S state-based data in a CSV format. CSVs were downloaded
-                according to the measure being studied, which ranged subjects such as the distribution of the asthmatic
-                population of male adults, to presence of formaldehyde in the air geographically. After being collected,
-                the CSVs were read into RStudio, and appropriate R packages were installed. Once all datasets were
-                imported into an RMarkdown file, the variable values needed to be subsetted in order to remove trailing
-                percentage signs, and subsequently converted from an alphanumeric string to a numerical factor. After
-                this processing, the datasets were able to flexibly be plotted in various visualizations, utilizing the
-                pre-installed packages.
+                according to the measure being studied, which ranged from subjects such as the distribution of the
+                asthmatic population of male adults, to presence of formaldehyde in the air geographically. After being
+                collected, the CSVs were read into RStudio, and appropriate R packages were installed, foremostly
+                ggplot2, tidyverse, and USMAP. Once all datasets were imported into an RMarkdown file, the variable
+                values needed to be subsetted in order to remove trailing percentage signs, and subsequently converted
+                from an alphanumeric string to a numerical factor. After this processing, the datasets were able to
+                flexibly be plotted in various visualizations, utilizing the pre-installed packages.
+
 
             </p>
 
-            <p> However, other visualizations utilized Python's pandas library to import data from CSV files. We read
-                the CSV files into DataFrames—a versatile data structure that allows for easy manipulation of the data.
-                We then were able to address issues such as missing values, incorrect data types, duplicate entries and
-                such using dataframe methods. </p>
+            <p> Other visualizations utilized CSV files from the CDC, WHO and NIH and then imported the data using
+                Python's pandas library. We read the CSV files into DataFrames—a versatile data structure that allows
+                for easy manipulation of the data. We then were able to address issues such as missing values, incorrect
+                data types, and duplicate entries using DataFrame methods. </p>
             <p>
                 Once the data was cleaned and processed, we visualized it using Folium, a Python library that aids in
                 creating interactive maps using the Leaflet.js library. To map our datasets with Folium, the DataFrame
-                we acquired can be iterated over to extract geographic coordinates and other information, which are then
+                we acquired was iterated over to extract geographic coordinates and other information, which are then
                 used to add markers to a Folium map.
             </p>
 
@@ -468,6 +470,9 @@
         <div style="color: rgb(176, 84, 84);">
             <p>Exploratory Data Analysis</p>
         </div>
+        <div style="color: rgb(84, 85, 176);">
+            <p>Asthma Prevalence in the USA</p>
+        </div>
         <div class="container">
             <div class="fixed-image">
                 <!-- Your image goes here -->
@@ -477,60 +482,300 @@
             <div class=" scrolling-content">
                 <!-- Your text content goes here -->
                 <p>Looking at the visual, the darkest regions correspond with areas of the highest asthmatic residence.
-                    These can be seen to be the Northeast, the Northwest, and Oregon. In contrast, fewer proportions of
-                    asthmatic adults are found in the Midwest region and Texas.</p>
-                <p>The Northeast region of Lubbock County appears to have concrete batch plants, which are potential
-                    sources of particulate matter (PM 2.5) emissions. Research has shown that PM 2.5 is a significant
-                    contributor to asthma hospitalizations. The study cited indicates that even a small increase in PM
-                    2.5 levels is associated with a substantial rise in the odds of having an asthma diagnosis.
+                    These can be identified as the Northeast, the Northwest, and Oregon. In contrast, fewer proportions
+                    of asthmatic adults are found in the Midwest region and Texas.</p>
+
+                <p>In explanation of these trends, the Northeast region of Lubbock County appears to have concrete batch
+                    plants, which are potential sources of particulate matter (PM 2.5) emissions. PM 2.5 has been shown
+                    to be a significant contributor to asthma hospitalizations (Zhou et al., 2021). The study cited
+                    indicates that even a small increase in PM 2.5 levels is associated with a substantial rise in the
+                    odds of having an asthma diagnosis.
                 </p>
                 <p>
-                    The high prevalence of asthma in the U.S. Pacific Northwest, notably in areas like Seattle, can be
-                    attributed to several factors, including the significant wildfire activity in the region. Wildfires
-                    generate substantial amounts of smoke, leading to poor air quality and exacerbating respiratory
-                    conditions like asthma. Additionally, industrial pollution and traffic congestion in urban areas
-                    contribute to air pollution, further worsening respiratory health. Socioeconomic disparities, such
-                    as poverty and limited access to healthcare, exacerbate asthma prevalence, particularly in
-                    vulnerable populations. These factors underscore the urgent need for comprehensive strategies to
-                    address the impacts of wildfires, improve air quality, and reduce socioeconomic inequities to
-                    mitigate asthma prevalence in the Pacific Northwest.
+                    The high prevalence of asthma in the U.S. Pacific Northwest, notably in areas such as Seattle, can
+                    be attributed to several factors, including the significant wildfire activity in the region.
+                    Wildfires generate substantial amounts of smoke, leading to poor air quality and exacerbating
+                    respiratory conditions like asthma. Additionally, industrial pollution and traffic congestion in
+                    urban areas contribute to air pollution, further worsening respiratory health (American Fitness
+                    Index, n.d.; Shaw, 2020). Socioeconomic disparities, such as poverty and limited access to
+                    healthcare, are known to exacerbate asthma prevalence, particularly in vulnerable populations. These
+                    factors, along with others, underscore the urgent need for comprehensive strategies to address the
+                    impacts of wildfires, improve air quality, and reduce socioeconomic inequities to mitigate asthma
+                    prevalence in the Pacific Northwest.
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="fixed-image">
+                <div class="home-container">
+                    <div style="color:rgb(60, 13, 250); text-align: center;">
+                        <p>Asthma prevalence through the years by state:</p>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider"
+                            class="year-slider">
+                        <div class="slider-ticks" , style="color: #FF5733;">
+                            <span> </span><span> </span><span> </span><span> </span><span> </span>
+                        </div>
+                    </div>
+                    <div style="color:#7b00ff">
+                        <div id="yearLabel" class="year-label">2017</div>
+                    </div>
+
+                </div>
+
+                <iframe id="yearIframe" width="600" height="400" style="border: none; margin: auto;display: block; "
+                    src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe>
+
+            </div>
+            <div class=" scrolling-content">
+                <p>
+                    Analyzing the asthma data from 2017 and 2021 reveals several key trends in the prevalence of asthma
+                    across different states and territories in the U.S. Overall, the data indicates a mixed trend with
+                    some states showing an increase in the number of individuals with asthma, while others exhibit a
+                    decrease. Notably, California, the most populous state, experienced a significant increase in the
+                    number of people with asthma, rising from approximately 2.4 million in 2017 to over 2.6 million in
+                    2021. Other states such as Maine and New Hampshire also reported substantial increases in both the
+                    absolute number of cases and the percentage of the population affected, suggesting a worsening
+                    situation in these areas.
+                </p>
+                <p>
+                    The increase in asthma prevalence in states like California, Maine, and New Hampshire could be
+                    attributed to multiple factors including environmental, economic, and demographic changes. For
+                    instance, worsening air quality, increased exposure to allergens, and changes in healthcare access
+                    and diagnosis rates could contribute to higher asthma prevalence. Conversely, some states like
+                    Florida showed a decrease in the percentage of the population with asthma, which could be due to
+                    improvements in air quality, better healthcare interventions, and public health policies aimed at
+                    reducing exposure to common asthma triggers. States that showed minimal or no increase, such as
+                    Vermont and Puerto Rico, might benefit from stable environmental conditions or effective public
+                    health strategies that mitigate the factors contributing to asthma.
 
                 </p>
             </div>
         </div>
-        <div class="home-container">
-            <div style="color:rgb(60, 13, 250); text-align: center;">
-                <p>Asthma prevalence through the years by state:</p>
+        <div class="container">
+            <div class=" scrolling-content">
+                <p> Based on the graph to the right, there was a large increase in the prevalence of asthma between 2001
+                    and 2002, increasing by almost 4%. There was a relatively steady increase of cases from 2001 to
+                    about 2015, after which there has been a steady decrease by about 1%. One potential reason for the
+                    decrease in diagnosis after 2019 is due to the risk of transmission for COVID-19 causing diagnosis
+                    services for lung diseases to slow due to risk of transmission (Singh, Sally J., et al). </p>
+
+                <p> The increase in asthma prevalence following 2001 may be due to several factors. In the aftermath of
+                    the 9/11 attacks, there was widespread exposure to dust and airborne pollutants, which could have
+                    led to respiratory conditions like asthma in susceptible individuals (CDC, 2018). Moreover, the
+                    heightened public awareness of respiratory health issues likely led to more people seeking medical
+                    advice for respiratory symptoms, potentially increasing the rate of asthma diagnosis (American
+                    Academy of Pediatrics, 2016).
+                </p>
+
+                <p> After 2015, the trend appears to reverse with a decrease in asthma diagnoses. This could be
+                    indicative of a variety of factors, including improved air quality, successful public health
+                    interventions targeting asthma risk factors, advancements in treatment and management, as well as
+                    better patient education leading to reduced symptoms and exacerbations. During the COVID-19
+                    pandemic, there was a notable decline in outpatient visits for non-COVID-related conditions,
+                    including routine screenings for asthma, which could partially explain the dip in new asthma
+                    diagnoses.
+                </p>
             </div>
-            <div class="slider-container">
-                <input type="range" min="2017" max="2021" value="2017" step="1" id="yearSlider" class="year-slider">
-                <div class="slider-ticks" , style="color: #FF5733;">
-                    <span> </span><span> </span><span> </span><span> </span><span> </span>
+
+            <div class="fixed-image">
+                <img src="https://github.com/tn292/asthma_prev_year/blob/main/asthma_prev_year.jpg?raw=true"
+                    alt="Asthma Prevalence in USA by year" style="width: 100%; height: auto;"">
+            </div>
+        </div>
+        <div class=" container">
+                <div class="fixed-image">
+                    <img src="https://github.com/tn292/asthma_prev_month/blob/main/asthma_prev_month.jpg?raw=true"
+                        alt="Asthma Prevalence in USA by month" style="width: 100%; height: auto;"">
+            </div>
+            <div class=" scrolling-content">
+                    <p> Much of the existing literature suggests that rhinovirus, or the common cold, is strongly
+                        related to a higher incidence of asthmatic people. Rhinovirus causes inflammation of bronchial
+                        epithelial cells, which restricts airflow, exacerbating already restricted airways existing in
+                        asthmatic individuals (Khan M. A., 2022). Since rhinovirus has its highest rate of incidence
+                        during the winter and early spring months, this may be linked with worsened symptoms for
+                        asthmatic individuals. Similarly, during early spring months, pollen counts in many regions of
+                        the U.S. are at an all-year high, leading to worsened symptoms of seasonal allergies (such as
+                        rhinitis). Since this can irritate the airways, it can further explain exacerbation of those
+                        already dealing with asthmatic symptoms.
+                    </p>
+                    <p> Asthma prevalence refers to the proportion of the population affected by asthma at a given point
+                        in time. According to the CDC, asthma prevalence is measured using data from the National Health
+                        Interview Survey (NHIS), where respondents self-report whether they have ever been told by a
+                        doctor, nurse, or other health professional that they have asthma, and whether they still have
+                        asthma. The current asthma prevalence percentage represents the proportion of individuals who
+                        answered "Yes" to both questions. This measure provides an estimate of the burden of asthma on
+                        the population and helps public health authorities understand the scope of the problem and
+                        allocate resources accordingly.
+                    </p>
                 </div>
+
+
             </div>
-            <div style="color:#7b00ff">
-                <div id="yearLabel" class="year-label">2017</div>
+            <div style="color: rgb(84, 85, 176);">
+                <p>Asthma and Poverty in the USA</p>
             </div>
+            <p> Poverty can certainly affect health, and according to a City of NYC (“Why Asthma Is a Social Justice
+                Issue”) article, “Why Asthma Is a Social Justice Issue”, the effect of asthma in New York City
+                demonstrates this. When they mapped the percentage of people in poverty and then compared it againstto
+                athe map of emergency department visits for asthma in children aged 5 to 17, a stark similarity
+                occurred. It is clear that in NYC, asthma is a poverty issue, sinceas clearly neighborhoods with higher
+                poverty rates also were known to have had higher rates of childhood hospital visits. Some potential
+                explanations for this phenomenon could be split into poor housing and lack of quality health care. Poor
+                living conditions mean that an asthmatic person would be in contact with mold, pests, dust, and other
+                potential things that could trigger and worsen asthmatic symptoms. And poor people will also have tobe
+                to access the higher-quality healthcare that most can, possibly being unable to afford or get medicine
+                to control asthma’s symptoms (e.g. an inhaler).
+            </p>
 
-        </div>
-        <iframe id="yearIframe" width="600" height="400" style="border: none; margin: auto;display: block; "
-            src="https://pages.github.coecis.cornell.edu/tn292/asthma2017/"></iframe>
+            <p> Evidently, the conventional perception regarding asthma is that it flourishes in poorer, densely
+                populated city areas. Though some researchers have christened an “inner-city asthma epidemic”, not much
+                thought has gone towards verification whether asthma is more common in urban regions than suburbs or
+                rural areas. A study published in the Journal of Allergy and Clinical Immunology (Kaplan) compared
+                asthma rates among children in census tracts, and found that kids in inner-city neighborhoods were no
+                more likely to have asthma than kids who live elsewhere.
+            </p>
+
+            <p> This is corroborated by our investigation of the distribution of poverty and asthma within the USA. The
+                visualizations below were meant to determine if the correlation between poverty and asthma exists
+                nationally or just within certain cities.
+            </p>
+
+            <div class=" container">
+                <div class="fixed-image">
+                    <img src="https://github.com/tn292/poverty_distr/blob/main/poverty_in_USA.jpg?raw=true"
+                        alt="Distribution of Poverty in USA" style="width: 80%; height: auto;"">
+                </div>
+                <div class=" fixed-image">
+                    <img src="https://github.com/tn292/asthma_distr/blob/main/asthma_distr.jpg?raw=true"
+                        alt="Distribution of Asthma in USA" style="width: 80%; height: auto;"">
+                </div>
+
+            </div>
+            <p> When examining nation-wide data of the distribution of poverty and asthma, poverty demonstrates much higher percentages in the Southern regions, especially New Mexico and Louisiana. In contrast, and as mentioned above, asthma is most prevalent in the Northeast and Northwest regions.</p>
+            <p> Potential Risk Factors That May Lead to Increased Asthma Prevalence in the Northwest and Northeast:
+                The Climates in both regions tend to have cooler, damper air for much of the year, which can lead to the growth of mold in homes and common infrastructure accessed by at-risk individuals
+                There is a prevalence of allergens, like increased pollination, that can exacerbate asthma symptoms
+            </p>
+
+            <div style=" color: rgb(84, 85, 176);">
+                    <p>Asthma Across Gender in the USA</p>
+                </div>
+                <p>
+                    Now, let's explore the distribution of asthma across different demographics, such as gender.
+
+                </p>
+                <div class=" container">
+                    <div class="fixed-image">
+                        <img src="https://github.com/tn292/male_distr/blob/main/male_distr.jpg?raw=true"
+                            alt="Distribution of Male Asthma in USA" style="width: 80%; height: auto;"">
+                    </div>
+                    <div class=" fixed-image">
+                        <img src="https://github.com/tn292/female_distr/blob/main/female_distr.jpg?raw=true"
+                            alt="Distribution of Female Asthma in USA" style="width: 80%; height: auto;"">
+                    </div>
+    
+                </div>
+                <p> Strikingly, the visualization showing the prevalence of asthmatic women is shaded much darker than the visualization showing the prevalence of asthmatic men. Indeed, women are much more likely to have asthma in their adult years than the male population. 
+                </p>
+                <div class=" container">
+                        <div class="fixed-image">
+                            <img src="https://github.com/tn292/youth_male/blob/main/youth_male.jpg?raw=true"
+                                alt="Distribution of Youth Male Asthma in USA" style="width: 80%; height: auto;"">
+                    </div>
+                    <div class=" fixed-image">
+                            <img src="https://github.com/tn292/youth_female/blob/main/female_youth.jpg?raw=true"
+                                alt="Distribution of Youth Female Asthma in USA" style="width: 80%; height: auto;"">
+                    </div>
+    
+                </div>
+                <p> On the contrary, our visuals show the opposite story when it comes to adolescents and children. Male youths have approximately 1.5x higher rates of asthma than female youths. 
+                </p>
+                <p> This gender difference is caused in part by the effects of sex hormones on lung cells, as testosterone hinders an immune cell linked to asthma symptoms, such as inflammation and mucus production in the lungs. Testosterone also has a positive effect on the immune system – it diminishes the presence of a type of immune cell called innate lymphoid cells (ILC), so the immune system becomes less reactive to factors that would normally trigger asthma symptoms (add source).  On the contrary, estrogen acts on the immune system to increase the severity of asthma symptoms, and acts indirectly to damage lung mechanics and increase inflammation (add source).
+                </p>
+                <p> After puberty, women are twice as likely to have asthma as men, and the pattern continues until women hit menopause, and then the asthma rates in women start to decline. In fact, after puberty, asthma becomes about 40 percent more prevalent in women, and women older than 15 are 2.3 times more likely than men to be admitted to the hospital for asthma (add source). 
+                </p>
+
+                <p> Though these are the most apparent and referenced reasons for differences between male and female rates of asthma before and after puberty, there are other factors that may play into these trends. For example, women generally have smaller airways compared to men, which may contribute to increased airway resistance and susceptibility to asthma symptoms. Smaller airways can also make it more difficult to clear mucus and other irritants, leading to greater airway inflammation and obstruction. Women also tend to have stronger immune responses and which can lead to heightened inflammation and airway reactivity in response to asthma triggers. In order to ascertain these factors as contributing to the trends seen between men and women with asthma, more empirical research is needed.
+                </p>
 
 
-        <p>
-            [insert description of trends]
-        </p>
-        <p>
-            [inset analysis of trends]
-        </p>
+                <div>
+                    <canvas id=" asthmaChart"></canvas>
+                        </div>
+                        <button onclick="updateChartData('children')">Children</button>
+                        <button onclick="updateChartData('adults')">Adults</button>
+                        <button onclick="updateChartData('seniors')">Seniors</button>
 
-        <div>
-            <canvas id="asthmaChart"></canvas>
-        </div>
-        <button onclick="updateChartData('children')">Children</button>
-        <button onclick="updateChartData('adults')">Adults</button>
-        <button onclick="updateChartData('seniors')">Seniors</button>
+                        <div style=" color: rgb(84, 85, 176);">
+                            <p>Asthma Across Age in the USA</p>
+                        </div>
+                        <p> In addition to gender, we can also examine asthma prevalence by age.
+                        </p>
+                        <div class=" container">
+                            <div class="fixed-image">
+                                <img src="https://github.com/tn292/asthma_prev_age/blob/main/asthma_prev_age.jpg?raw=true"
+                                    alt="Asthma Prevalence Rate by Age in USA" style="width: 80%; height: auto;"">
+                            </div>
+                            <div class=" scrolling-content">
+                                <p> Based on the analysis of current asthma prevalence in the United States by age
+                                    group, we found that young adults (age groups 15-19 and 20-24) had the highest
+                                    percentages of asthma, with 9.3% and 10.3% respectively. This increase in prevalence
+                                    for those from birth up to age 24 might be due to changes in how asthma is diagnosed
+                                    and accounted for, and/or better awareness of asthma and thus diagnoses systems for
+                                    adults. Or, it could also be due to the fact that false attribution of other
+                                    respiratory symptoms to doctor-diagnosed asthma might have occurred for adults.
+                                </p>
+                                <p> An increase of asthma prevalence for those who have reached adulthood might also be
+                                    due to the factor of adult-onset asthma. Previous studies have shown that
+                                    adult-onset asthma is more non-allergenic and more prevalent in women.</p>
+                                <p> Similarly, another factor that might influence the higher prevalence of asthma in
+                                    higher age groups is occupational asthma or environmental risk factors. For example,
+                                    different factors like long-term exposure to O3 air pollution, organic dusts, and
+                                    cleaning agents have all been shown to be associated with asthma onset for adults.
+                                </p>
+                                <p> This might explain why prevalence increased in higher age groups and remains
+                                    relatively the same for the three latter age groups (25-34, 35-64, 65+). In addition
+                                    to those who received diagnoses offor asthma in childhood, the higher age groups
+                                    also include those with occupational or environment-affected asthma development.</p>
 
+                            </div>
+
+
+                        </div>
+                        <div class=" container">
+                            <div class=" scrolling-content">
+                                <p> The graph depicting asthma mortality rates by age in the USA clearly shows that the
+                                    elderly population has a significantly higher mortality rate from asthma compared to
+                                    younger people. This trend can be attributed to several age-related factors. As
+                                    people age, their immune systems typically weaken, and lung function naturally
+                                    declines. This can make the elderly more vulnerable to respiratory conditions,
+                                    including the severity of asthma attacks which can be fatal.
+                                </p>
+                                <p> Furthermore, older adults may have a range of comorbidities, such as COPD or heart
+                                    disease, which can complicate asthma management and exacerbate its symptoms. The
+                                    ability to recover from asthma exacerbations also diminishes with age, increasing
+                                    the risk of mortality. Moreover, polypharmacy, which refers to the use of multiple
+                                    medications, is common in this age group and can lead to drug interactions that
+                                    potentially worsen asthma control (Hanania & Sharafkhaneh, 2018).
+                                </p>
+                                <p> Additionally, there may be social and behavioral factors at play. Older adults are
+                                    often less likely to recognize or report symptoms of asthma. They might downplay
+                                    their symptoms or attribute them to general aging, leading to under-treatment.
+                                    Healthcare access issues, cognitive decline, or physical limitations can also
+                                    interfere with effective asthma management in older adults. All these aspects
+                                    combined contribute to the higher rates of asthma-related deaths in the elderly as
+                                    depicted in the graph. For further details, the CDC Asthma Hub and the referenced
+                                    studies provide a wealth of information on asthma management and risks in older
+                                    adults (Baptist & Busse, 2014; AAFA, n.d.).
+                                </p>
+                            </div>
+                            <div class="fixed-image">
+                                <img src="https://github.com/tn292/asthma_mortality/blob/main/asthma_mortality.jpg?raw=true"
+                                    alt="Asthma Mortality Rate by Age in USA" style="width: 80%; height: auto;"">
+                            </div>
+                        </div>
 
 
 
@@ -539,10 +784,10 @@
 
     </section>
 
-    <section id="Model">
-        <div style="color: rgb(176, 84, 84);">
-            <p>Model</p>
-        </div>
+    <section id=" Model">
+                                <div style="color: rgb(176, 84, 84);">
+                                    <p>Model</p>
+                                </div>
     </section>
 
     <script>
@@ -646,7 +891,7 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var ctx = document.getElementById('asthmaChart').getContext('2d');
+            var ctx = document.getElementById(' asthmaChart').getContext('2d');
             var asthmaChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
