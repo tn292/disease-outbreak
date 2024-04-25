@@ -23,6 +23,13 @@
             background-color: #c8e6f5;
         }
 
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
         .cover {
             height: 100vh;
             width: 100vw;
@@ -116,6 +123,28 @@
             transition: opacity 1s;
             margin: 35px;
         }
+
+        #navigateButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            /* 20px from the bottom */
+            right: 20px;
+            /* 20px from the right */
+        }
+
+        #navigateButton:hover {
+            background-color: #45a049;
+            /* Darker green on hover */
+        }
+
 
         .slider-container {
             position: relative;
@@ -284,36 +313,31 @@
         }
 
 
+
+
+
+
         .container {
             display: flex;
             align-items: flex-start;
-            min-height: 100vh;
-            /* Ensure there's enough height for sticky to work */
+            /* Aligns items to the top of the container */
         }
 
         .fixed-image {
-            position: -webkit-sticky;
-            /* for Safari */
+            width: 50%;
+            /* Adjust the width as necessary */
+            height: auto;
+            /* Adjust based on content, ensuring no fixed height unless necessary */
             position: sticky;
             top: 0;
-            align-self: flex-start;
-            width: 50%;
-            /* or whatever width you want */
-            height: auto;
-            /* to maintain aspect ratio */
-            z-index: 10;
-            /* ensure it's above other content */
         }
 
         .scrolling-content {
             flex: 1;
             overflow-y: auto;
-            height: 100vh;
-            /* make sure this is tall enough for scrolling */
-            padding-left: 20px;
-            /* give some space from the image */
-            margin-left: auto;
-            /* this will push the content to the right of the image */
+            height: auto;
+            /* This allows the content to define the height, not the container */
+            padding: 10px;
         }
     </style>
 </head>
@@ -477,7 +501,7 @@
             <div class="fixed-image">
                 <!-- Your image goes here -->
                 <img src="https://github.com/tn292/asthma_prev/blob/main/asthma_prev.jpg?raw=true"
-                    alt="Distribution of Asthmatic Adults in the USA" style="width: 100%; height: auto;"">
+                    alt="Distribution of Asthmatic Adults in the USA" style="width: 100%; height: auto;" class="center"">
             </div>
             <div class=" scrolling-content">
                 <!-- Your text content goes here -->
@@ -505,6 +529,7 @@
                 </p>
             </div>
         </div>
+        <hr>
         <div class="container">
             <div class="fixed-image">
                 <div class="home-container">
@@ -553,6 +578,7 @@
                 </p>
             </div>
         </div>
+        <hr>
         <div class="container">
             <div class=" scrolling-content">
                 <p> Based on the graph to the right, there was a large increase in the prevalence of asthma between 2001
@@ -581,13 +607,14 @@
 
             <div class="fixed-image">
                 <img src="https://github.com/tn292/asthma_prev_year/blob/main/asthma_prev_year.jpg?raw=true"
-                    alt="Asthma Prevalence in USA by year" style="width: 100%; height: auto;"">
+                    alt="Asthma Prevalence in USA by year" style="width: 100%; height: auto;" class="center"">
             </div>
         </div>
+        <hr>
         <div class=" container">
                 <div class="fixed-image">
                     <img src="https://github.com/tn292/asthma_prev_month/blob/main/asthma_prev_month.jpg?raw=true"
-                        alt="Asthma Prevalence in USA by month" style="width: 100%; height: auto;"">
+                        alt="Asthma Prevalence in USA by month" style="width: 100%; height: auto;" class="center"">
             </div>
             <div class=" scrolling-content">
                     <p> Much of the existing literature suggests that rhinovirus, or the common cold, is strongly
@@ -645,11 +672,11 @@
             <div class=" container">
                 <div class="fixed-image">
                     <img src="https://github.com/tn292/poverty_distr/blob/main/poverty_in_USA.jpg?raw=true"
-                        alt="Distribution of Poverty in USA" style="width: 80%; height: auto;"">
+                        alt="Distribution of Poverty in USA" style="width: 80%; height: auto;" class="center"">
                 </div>
                 <div class=" fixed-image">
                     <img src="https://github.com/tn292/asthma_distr/blob/main/asthma_distr.jpg?raw=true"
-                        alt="Distribution of Asthma in USA" style="width: 80%; height: auto;"">
+                        alt="Distribution of Asthma in USA" style="width: 80%; height: auto;" class="center"">
                 </div>
 
             </div>
@@ -669,11 +696,11 @@
                 <div class=" container">
                     <div class="fixed-image">
                         <img src="https://github.com/tn292/male_distr/blob/main/male_distr.jpg?raw=true"
-                            alt="Distribution of Male Asthma in USA" style="width: 80%; height: auto;"">
+                            alt="Distribution of Male Asthma in USA" style="width: 80%; height: auto;" class="center"">
                     </div>
                     <div class=" fixed-image">
                         <img src="https://github.com/tn292/female_distr/blob/main/female_distr.jpg?raw=true"
-                            alt="Distribution of Female Asthma in USA" style="width: 80%; height: auto;"">
+                            alt="Distribution of Female Asthma in USA" style="width: 80%; height: auto;" class="center"">
                     </div>
     
                 </div>
@@ -682,11 +709,13 @@
                 <div class=" container">
                         <div class="fixed-image">
                             <img src="https://github.com/tn292/youth_male/blob/main/youth_male.jpg?raw=true"
-                                alt="Distribution of Youth Male Asthma in USA" style="width: 80%; height: auto;"">
+                                alt="Distribution of Youth Male Asthma in USA" style="width: 80%; height: auto;"
+                                class="center"">
                     </div>
                     <div class=" fixed-image">
                             <img src="https://github.com/tn292/youth_female/blob/main/female_youth.jpg?raw=true"
-                                alt="Distribution of Youth Female Asthma in USA" style="width: 80%; height: auto;"">
+                                alt="Distribution of Youth Female Asthma in USA" style="width: 80%; height: auto;"
+                                class="center"">
                     </div>
     
                 </div>
@@ -716,7 +745,8 @@
                         <div class=" container">
                             <div class="fixed-image">
                                 <img src="https://github.com/tn292/asthma_prev_age/blob/main/asthma_prev_age.jpg?raw=true"
-                                    alt="Asthma Prevalence Rate by Age in USA" style="width: 80%; height: auto;"">
+                                    alt="Asthma Prevalence Rate by Age in USA" style="width: 80%; height: auto;"
+                                    class="center"">
                             </div>
                             <div class=" scrolling-content">
                                 <p> Based on the analysis of current asthma prevalence in the United States by age
@@ -744,6 +774,7 @@
 
 
                         </div>
+                        <hr>
                         <div class=" container">
                             <div class=" scrolling-content">
                                 <p> The graph depicting asthma mortality rates by age in the USA clearly shows that the
@@ -773,22 +804,457 @@
                             </div>
                             <div class="fixed-image">
                                 <img src="https://github.com/tn292/asthma_mortality/blob/main/asthma_mortality.jpg?raw=true"
-                                    alt="Asthma Mortality Rate by Age in USA" style="width: 80%; height: auto;"">
+                                    alt="Asthma Mortality Rate by Age in USA" style="width: 80%; height: auto;"
+                                    class="center"">
                             </div>
                         </div>
+                        <hr>
+                        <div class=" container">
+                                <div class="fixed-image">
+                                    <img src="https://github.com/tn292/asthma_attacks/blob/main/asthma_attack.jpg?raw=true"
+                                        alt="Asthma Attack Prevalence among Asthmatics"
+                                        style="width: 80%; height: auto;" class="center"">
+                            </div>
+                            <div class=" scrolling-content">
+                                    <p> After examining the factors contributing to the higher mortality rates from
+                                        asthma in the elderly population, it's important to shift our focus to another
+                                        vulnerable group: infants. While the elderly face age-related declines in lung
+                                        function and immune response, resulting in a higher mortality rate from asthma,
+                                        they are less likely to experience frequent asthma attacks compared to younger
+                                        age groups due to various factors such as decreased physical activity and
+                                        exposure to environmental triggers. In contrast, infants, with their developing
+                                        respiratory systems and susceptibility to respiratory viruses, are particularly
+                                        prone to asthma attacks. Babies are more susceptible to asthma attacks due to
+                                        several factors. Their smaller airways can easily become blocked or irritated by
+                                        viral infections, tight airways, or mucus buildup, making breathing difficult.
+                                        Additionally, infants may lack the ability to effectively communicate their
+                                        symptoms, leading to delays in diagnosis and treatment. Respiratory viruses,
+                                        common in children under 5, are a major trigger for asthma symptoms in infants,
+                                        with at least half of asthmatic children showing signs before age 5 (Vogelberg,
+                                        2019). Moreover, infants with a family history of asthma or allergies, specific
+                                        allergies, or exposure to maternal smoking during pregnancy are at higher risk
+                                        of developing asthma early in life. Identifying asthma in infants can be
+                                        challenging due to overlapping symptoms with other conditions like
+                                        bronchiolitis, croup, or pneumonia. Diagnostic methods such as lung function
+                                        tests are often impractical, and doctors may rely on observing the child's
+                                        response to medications, blood tests, allergy testing, and X-rays for diagnosis.
+                                        Treatment involves administering asthma medications tailored for infants,
+                                        typically through nebulizers or inhalers with spacers and masks. Caregivers
+                                        should develop an Asthma Action Plan with their child's doctor to manage
+                                        symptoms effectively and seek emergency care when necessary.
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class=" container">
+                                <div class=" scrolling-content">
+                                    <p> Hospitalizations for asthma are most prevalent for infants, toddlers, and young
+                                        children in the United States. This prevalence in pediatric hospitalization for
+                                        asthma can potentially be explained by several factors: 1) differences in immune
+                                        systems for infants and higher severity for younger populations, 2) diagnostic
+                                        issues in early childhood and 3) repeat hospitalizations. First, the immune
+                                        systems of infants and children are much weaker than adults, making them more
+                                        susceptible to respiratory infections such as those from RSV (respiratory
+                                        syncytial virus) and rhinovirus. Research has shown that such viral infections
+                                        are the most common cause of symptom exacerbation in children. Physiologically,
+                                        infants and children have smaller airways which contribute to the increased
+                                        severity ofin symptoms due to blocked airways.
+                                        (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7105201/)
+                                    </p>
+                                    <p> Another reason for higher rates of asthma in the youngest cohorts is the
+                                        difficulty of asthma diagnosis for these age groups. First, asthma might be hard
+                                        to diagnose for children and infants, who either cannot or have more difficulty
+                                        communicating their symptoms. Secondly, due to asthma symptoms being very
+                                        similar to other disease symptoms that young children might suffer severely from
+                                        (e.g. pneumonia), the higher number of hospitalizations might also account for
+                                        misdiagnosed cases. Because diagnosis of asthma might rely on methods like lung
+                                        function tests that might be difficult or risky to perform for infants,
+                                        hospitalizations attributed to asthma might be overcounted for
+                                        them.(https://aafa.org/asthma/living-with-asthma/asthma-in-infants/#:~:text=How%20Is%20Asthma%20in%20Infants,breathing%20difficult%20for%20the%20child
+                                        )
+                                    </p>
+                                    <p> Finally, repeat hospitalizations for infants and young children might also
+                                        explain why case counts are highest for this age group despite mortality rates
+                                        being highest for older adults. The data does not count unique patient cases or
+                                        new hospitalizations, but rather total numbers of hospitalizations. Research has
+                                        shown that readmissions for severe asthma areis high for the “highest-risk”
+                                        children, with up to one in four youth being rehospitalized within just thirty
+                                        days.
+                                        (https://policylab.chop.edu/sites/default/files/pdf/publications/Reducing_Repeat_Hospital_Visits_For_Children_With_Asthma.pdf)
+                                        Repeat hospitalizations might also be attributed to the fact that parents and
+                                        caregivers of these age groups are more aware and likely to seek medical
+                                        attention for their children at younger ages. This proactiveness might explain
+                                        any repeat hospitalizations and/or assessments thatwhich contribute to higher
+                                        counts of hospitalizations for pediatric asthma patients.
+                                    </p>
+                                </div>
+                                <div class="fixed-image">
+                                    <img src="https://github.com/tn292/asthma_hosp/blob/main/asthma_prevalence.jpg?raw=true"
+                                        alt="Asthma Hospitalization Prevalence Rate in USA"
+                                        style="width: 80%; height: auto;" class="center"">
+                                </div>
+                            </div>
+                            <div style=" color: rgb(84, 85, 176);">
+                                    <p>Asthma with Other Diseases in the USA</p>
+                                </div>
+                                <p> In medical terms, a comorbidity refers to the coexistence of two or more diseases or
+                                    medical conditions in the same individual, where one is usually the primary
+                                    condition and the others are additional. This concept helps in understanding how
+                                    various diseases interact and affect an individual's overall health and treatment
+                                    outcomes​.
+                                </p>
+                                <p> In the context of asthma, obesity and COPD are common additional health problems.
+                                    Obesity can worsen asthma symptoms due to increased inflammation and physical
+                                    pressure on the lungs. COPD and asthma often occur together, which can make
+                                    diagnosing and managing each condition more complicated. These links are crucial to
+                                    consider in treating and understanding asthma effectively.
+                                </p>
 
+                                <div class=" container">
+                                    <div class="fixed-image">
+                                        <img src="https://github.com/tn292/asthma_distribution/blob/main/asthma_distribution.jpg?raw=true"
+                                            alt="Distribution of Asthma in USA" style="width: 77%; height: auto;"
+                                            class="center"">
+                                    </div>
+                                    <div class=" fixed-image">
+                                        <img src="https://github.com/tn292/copd_distr/blob/main/copd_distr.jpg?raw=true"
+                                            alt="Distribution of COPD in USA" style="width: 75%; height: auto;"
+                                            class="center"">
+                                    </div>
+                                </div>
+                                <img src=" https://github.com/tn292/obesity_distr/blob/main/obesity_distr.jpg?raw=true"
+                                            alt="Distribution of Obesity in USA" style="width: 40%; height: auto;"
+                                            class="center">
+                                        <p> Looking at the relative concentrations of individuals with asthma, COPD, and
+                                            obesity among all 50 states, there seems to be some level of correlation
+                                            between the three, but mostly between COPD and obesity. For example, in the
+                                            Southeast United States, there is a high concentration of both obese
+                                            individuals and individuals diagnosed with COPD.
+                                        </p>
+                                        <p> Asthma and COPD (Chronic Obstructive Pulmonary Disease) are both chronic
+                                            respiratory conditions with overlapping symptoms and risk factors, leading
+                                            to a notable correlation between the two. This correlation is largely due to
+                                            the inflammatory processes and the pathophysiological traits they share,
+                                            which can manifest in individuals as Asthma-COPD Overlap (ACO). ACO is
+                                            characterized by features typical of both diseases, such as airway
+                                            hyperresponsiveness and obstruction, and tends to have a greater disease
+                                            burden compared to each condition alone. Individuals with ACO often
+                                            experience an earlier onset of symptoms and a steeper decline in lung
+                                            function over time, necessitating a broader and more intense range of
+                                            treatments (ERJ ERS Journals, 2022; BioMed Central, 2023).
+                                        </p>
+                                        <p> On the other hand, the correlation between asthma and obesity is significant
+                                            due to the mechanical and inflammatory impacts of excess body weight on lung
+                                            function. Obesity can exacerbate asthma by reducing lung volume, altering
+                                            airway responsiveness, and increasing inflammation, thereby intensifying
+                                            asthma symptoms and control issues. The link between COPD and obesity is
+                                            less direct and not as strong; while obesity can worsen breathlessness in
+                                            COPD patients, it doesn’t have as direct a role in the development or
+                                            exacerbation of COPD as it does with asthma (ERJ ERS Journals, 2022; BioMed
+                                            Central, 2023).
+                                        </p>
+                                        <p> Thus, the interconnections between asthma and COPD are more intrinsic due to
+                                            the shared aspects of airway disease, while the relationship between asthma
+                                            and obesity involves additional mechanisms related to body weight's impact
+                                            on respiratory physiology. This explains why asthma is more closely linked
+                                            with both COPD and obesity independently, rather than a direct correlation
+                                            between COPD and obesity itself.
+                                        </p>
+                                        <img src="https://github.com/tn292/corr_matrix/blob/main/corr_matrix.jpg?raw=true"
+                                            alt="Correlation Matrix" class="center">
+                                        <p> Our computed correlation matrix displays measures of geographic association
+                                            between the afflictions of COPD, obesity, and asthma. Greater absolute
+                                            values represent a stronger association, and values closer to 0 represent a
+                                            lack of association. Interestingly, as mentioned previously, COPD and
+                                            obesity show the strongest correlation coefficient, a measure that aims to
+                                            gauge the strength of a linear relationship between two variables, ranging
+                                            from -1 to 1. This may be due to the negative effects of obesity on
+                                            respiratory disease, as buildup of fat around the heart, lungs, and chest,
+                                            commonly associated with obesity, inhibit the functioning of those organs,
+                                            which can exacerbate respiratory conditions. Additionally, about 65% of the
+                                            COPD-having population falls in the overweight or obese categories (Verberne
+                                            et al. 63), so geographic associations may be more pronounced between the
+                                            two afflictions; in comparison, the asthmatic obesity rate was about 38.8%
+                                            in the US in 2010. Though this figure is statistically larger than the
+                                            nonasthmatic obesity rate (26.8%), it still is far less than the percentage
+                                            of overweight or obese COPD-having individuals (CDC).
+                                        </p>
+                                        <p> While asthma can also be influenced by environmental geographic factors,
+                                            such as air pollution and external allergens, its geographical distribution
+                                            may be less pronounced compared to COPD and obesity. This may be due to
+                                            differences in the underlying mechanisms and triggers of asthma, such as
+                                            genetic factors, allergies, and respiratory infections. Additionally, asthma
+                                            may not always be solely influenced by external factors and can have a
+                                            significant genetic component, which results in its geographical association
+                                            being far less straightforward.
+                                        </p>
+                                        <div style=" color: rgb(84, 85, 176);">
+                                            <p>Asthma Triggers in the USA</p>
+                                        </div>
+                                        <p>Environmental factors such as smoking and cigarette usage, wildfires,
+                                            allergens, and pollutants have long been associated with asthma. Because
+                                            asthma is influenced by a variety of both indoor and outdoor factors, it is
+                                            thus of interest to study the geographic distribution of such environmental
+                                            factors in comparison to that of the adult asthmatic population in the
+                                            United States. Such analysis may reveal better understanding of asthma
+                                            triggers and development in addition to potential public health strategies
+                                            on a state-by-state level.
+                                        </p>
+                                        <p> For example, it is worthwhile to study asthmagens, or known chemicals such
+                                            as volatile organic compounds (VOCs) that cause asthma. Formaldehyde and
+                                            acetaldehyde are two such VOCs that have been related to occupational
+                                            asthma, so studying the environmental exposure to these chemicals would be
+                                            key.
+                                            (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6743554/pdf/pcrj2004111.pdf.)
+                                            In addition, studying rates of asthma in relation to levels of smoking and
+                                            cigarette usage is also essential because smoke, including secondhand
+                                            tobacco smoke, has long been known as a trigger for asthma.
+                                            (https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-020-09245-9)
+                                        </p>
+                                        <p> Similarly, examining the relation of regions with frequent wildfires (and
+                                            thus associated smoke) and rates of asthma might be helpful to 1) understand
+                                            such high-risk asthma areas and 2) think of management efforts for
+                                            air-quality related asthma prevalence.
+                                        </p>
+                                        <p> Specifically, we chose the chemicals formaldehyde and acetaldehyde to
+                                            examine the geographic distribution of. When organic materials such as
+                                            vegetation and biomass are burned, various volatile organic compounds (VOCs)
+                                            are released into the atmosphere, including formaldehyde. Formaldehyde was
+                                            hence chosen to study, due to its status as one of the most abundant
+                                            non-methane volatile organic compounds; as a byproduct of incomplete
+                                            combustion of organic matter, wildfires can produce significant amounts of
+                                            formaldehyde along with other pollutants. Additionally, formaldehyde can be
+                                            present in various indoor products commonly found in homes and workplaces,
+                                            including building materials such as plywood, particleboard, and insulation,
+                                            as well as household items like composite wood furniture, cabinets, and
+                                            flooring; formaldehyde is commonly used in the production of these materials
+                                            as a resin or adhesive to provide strength, durability, and moisture
+                                            resistance. Additionally, formaldehyde may be present in permanent press
+                                            fabrics, personal care products, and certain cleaning agents, and combustion
+                                            sources like tobacco smoke and gas appliances can also release formaldehyde
+                                            indoors. Long-term exposure to elevated levels of formaldehyde has adverse
+                                            health effects, including respiratory irritation, allergy triggering, and
+                                            potential carcinogenic effects (Liao et al. 18319-18331). </p>
 
+                                        <div class=" container">
+                                            <div class="fixed-image">
+                                                <img src="https://github.com/tn292/asthma_distribution/blob/main/asthma_distribution.jpg?raw=true"
+                                                    alt="Distribution of Asthma in USA"
+                                                    style="width: 80%; height: auto;" class="center"">
+                                                </div>
+                                                <div class=" fixed-image">
+                                                <img src="https://github.com/tn292/formal_distr/blob/main/distr_formal.jpg?raw=true"
+                                                    alt="Distribution of Formaldehyde in USA"
+                                                    style="width: 80%; height: auto;" class="center"">
+                                                </div>
+                                            </div>
+                                <p> There is not a huge similarity between the distribution of formaldehyde and asthma in the United States. In fact, California and some select states in the south have the highest percentage of formaldehyde in the atmosphere, but most of the states with the highest percentage of asthmatic adults are in the Northern United States, including Oregon and most of New England. A possible explanation for why formaldehyde could be darkened in California is because of the frequency of wildfires that occur at a much greater rate than most of the country. Meanwhile, a possible explanation for the increased rates of formaldehyde in the South could be due to more smokers being present in those areas. Formaldehyde emissions tend to increase in places with high humidity, and ozone also helps it exacerbate problems (Van Evra).  A possible reason that the formaldehyde and asthma distributions across the country are not very similar could be that pollutants as a whole could cause asthma, but not specifically one chemical. Formaldehyde is also really harmful at high concentrations, which people may not be exposed to very often. 
+                                </p>
+                                <iframe id=" yearIframe" width="600" height="400"
+                                                    style="border: none; margin: auto;display: block; "
+                                                    src="https://pages.github.coecis.cornell.edu/tn292/cigaretteusage/"></iframe>
+                                                <p> Smoking is most prevalent in the states of West Virginia, Kentucky,
+                                                    Louisiana, and New Jersey, while asthma is most prevalent in the
+                                                    Northern states, indicating a discrepancy in trends. However, West
+                                                    Virginia and Kentucky both have higher asthma levels than any state
+                                                    surrounding them, possibly indicating a correlation between smoking
+                                                    and asthma. While it is certain that tobacco smoke is a powerful
+                                                    asthma trigger, it may not be as large of a cause as anticipated.
+                                                    Instead, smoking exacerbates the negative symptoms of asthma,
+                                                    leading to more frequent and severe attacks, and causing medication
+                                                    to work less effectively (“Asthma and Smoking”). Not only does
+                                                    smoking affect asthma, but exposure to secondhand smoke is also
+                                                    detrimental and is connected with more severe symptoms. But, asthma
+                                                    can be caused by a variety of factors, which may interact and work
+                                                    with each other, and asthma being more prevalent in the North could
+                                                    be due to those other factors.
+                                                </p>
+                                                <p> Additionally, acetaldehyde is another VOC commonly found in tobacco
+                                                    burning, as well as various industrial emissions. Acetaldehyde was
+                                                    chosen to study due to its status as one of the leading harmful
+                                                    chemicals produced during the combustion of tobacco in cigarettes,
+                                                    cigars, and other tobacco products, associated with various health
+                                                    risks, including cancer and respiratory diseases. Additionally,
+                                                    acetaldehyde is emitted from vehicle exhaust, industrial emissions,
+                                                    and combustion processes. Acetaldehyde can be emitted as a byproduct
+                                                    of industrial processes, particularly those involving combustion or
+                                                    chemical synthesis. Industries such as chemical manufacturing,
+                                                    petroleum refining, and metalworking may also acetaldehyde into the
+                                                    atmosphere as part of their emissions, contributing to air pollution
+                                                    and posing health risks to nearby communities. </p>
 
-
+                                                <img src="https://github.com/tn292/acetyl_distr/blob/main/acetyl_distr.jpg?raw=true"
+                                                    alt="Distribution of Acetaldehyde in USA"
+                                                    style="width: 50%; height: auto;" class="center"">
 
 
     </section>
 
     <section id=" Model">
-                                <div style="color: rgb(176, 84, 84);">
-                                    <p>Model</p>
-                                </div>
+                                                <div style="color: rgb(176, 84, 84);">
+                                                    <p>Model</p>
+                                                </div>
+                                                <p> The ability to predict asthma prevalence accurately is crucial for
+                                                    effective healthcare planning and individual risk management. This
+                                                    model aims to leverage both environmental and genetic factors to
+                                                    estimate the likelihood of asthma in individuals based on several
+                                                    key parameters we explored, specifically US State (location),
+                                                    gender, cigarette usage, average annual income and family history of
+                                                    asthma. These inputs are utilized to provide tailored asthma risk
+                                                    assessments.
+                                                </p>
+                                                <p> Using the data we collected for the above analysis, we prepared our
+                                                    data for our model by handling missing values and encoding
+                                                    categorical variables like ‘State’ and ‘Gender’. States were one-hot
+                                                    encoded to create a binary column for each, while gender was simply
+                                                    converted to a binary variable (0 for Female and 1 for Male). Income
+                                                    data was converted to a binary variable. Income data was normalized
+                                                    to level the playing field across different economic conditions,
+                                                    ensuring the analysis’s fairness and accuracy.
+                                                </p>
+                                                <p> Ridge Regression was chosen for model building due to its
+                                                    effectiveness in managing multicollinearity, which is seen to be a
+                                                    common issue with one-hot encoded data and overlapping demographic
+                                                    variables. The model was trained on 80% of the dataset, which the
+                                                    remaining 20% was kept for validation. We used performance metrics
+                                                    such as Root Mean Squared Error (RMSE) and the coefficient of
+                                                    determination (R^2) to indicate high reliability and predictive
+                                                    capability. Our model demonstrated high accuracy, with a RMSE of
+                                                    1.33 and a R^2 of 0.60, indicating that the model could explain 80%
+                                                    of the variance in asthma prevalence among the dataset.
+                                                </p>
+                                                <p> We also adjusted the model to account for family history of asthma.
+                                                    If a family history of asthma is indicated, the prediction is
+                                                    adjusted upwards by a set percentage, in this case by 10%.
+                                                </p>
+                                                <p> We then integrated the model into an interactive tool that enables
+                                                    users to input their personal data and receive an immediate asthma
+                                                    prevalence prediction. This tool is particularly useful for
+                                                    individuals seeking insights into their health risks.
+                                                </p>
+                                                <button id="navigateButton" onclick="navigateToScreen()">See
+                                                    Model</button>
+
+
+
+
     </section>
+    <section id="Conclusion">
+        <div style="color: rgb(176, 84, 84);">
+            <p>Conclusion</p>
+        </div>
+        <p> Overall, asthma is associated with many factors, and the trends of asthma were explored in relation to
+            gender, age, and possible exacerbating factors. These factors included cigarette smoke, comorbidities,
+            obesity, asthma triggers, and poverty. We were intrigued to find strong associations between some variables
+            and weaker-than-expected ones for others. We then dove further into the potential reasoning behind these
+            trends, trying to deepen our understanding of why asthma occurs and how it does to create a comprehensive
+            asthmatic prevalence likelihood model.
+        </p>
+    </section>
+    <section id="Next Steps">
+        <div style="color: rgb(176, 84, 84);">
+            <p>Next Steps</p>
+        </div>
+        <p> Given additional time and resources to broaden our field of study, there are many possible avenues of
+            research and visualization that would be quite worthwhile to investigate. One interesting branch to develop
+            would revolve around investigation of specific genetic factors linked with asthma in young children.
+            Additionally, ascertaining whether certain factors affect those pregnant with asthmatic children would be
+            interesting, as would studying associations of asthma with other comorbidities, such as GERD or rhinitis.
+            Furthermore, though there is no outright cure for asthma, we also could investigate whether certain methods
+            of prevention or deterrence have a statistically significant effectiveness rate compared to others.
+        </p>
+        <p> Another area of study would be investigating the impact of specific environmental pollutants on asthma
+            incidence. While we did look into and saw very little correlation between AQI and Asthma, it might be
+            worthwhile to see how specific levels of particulate matter, ozone and nitrogen dioxide could interact with
+            asthma prevalence rates. Moreover, it would be interesting to explore the effects of lifestyle choices on
+            asthma management, such as diet, exercise and stress levels.
+        </p>
+    </section>
+    <section id="References">
+        <div style="color: rgb(176, 84, 84);">
+            <p>References</p>
+        </div>
+        “Asthma Causes & Risk Factors” American Lung Association, 19 April 2023,
+        https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma/learn-about-asthma/what-causes-asthma
+
+        From section 4-2:
+        Association, American Lung. Asthma-COPD Overlap Syndrome (ACOS).
+        https://www.lung.org/lung-health-diseases/lung-disease-lookup/asthma/learn-about-asthma/types/asthma-copd-overlap-syndrome.
+        Accessed 21 Apr. 2024.
+        Association, American Lung. Learn About COPD.
+        https://www.lung.org/lung-health-diseases/lung-disease-lookup/copd/learn-about-copd. Accessed 21 Apr. 2024.
+        From section 4-5:
+        Kaplan, Karen. "Inner-city children's asthma rates greatly affected by suburban neighborhoods." *Los Angeles
+        Times*, 21 Jan. 2015,
+        https://www.latimes.com/science/sciencenow/la-sci-sn-asthma-rate-inner-city-suburban-20150121-story.html.
+        Khan M. A. (2022). Monthly and seasonal prevalence of asthma and chronic obstructive pulmonary disease in the
+        District Dera Ismail Khan, Khyber Pakhtunkhwa, Pakistan. The Egyptian Journal of Bronchology, 16(1), 63.
+        https://doi.org/10.1186/s43168-022-00166-2
+        Singh, Sally J., et al. “Respiratory Sequelae of COVID-19: Pulmonary and Extrapulmonary Origins, and Approaches
+        to Clinical Care and Rehabilitation.” The Lancet. Respiratory Medicine, May 2023. PubMed Central,
+        https://doi.org/10.1016/S2213-2600(23)00159-5.
+
+        Verberne, Lisa D. M., et al. "Overweight in patients with chronic obstructive pulmonary disease needs more
+        attention: a cross-sectional study in general practice." NPJ Prim Care Respir Med, vol. 27, 2017, p. 63.
+        Published online 2017 Nov 22. doi: 10.1038/s41533-017-0065-3. PMCID: PMC5700136. PMID: 29167434.
+        Center for Disease Control. "Asthma and Obesity". Centers for Disease Control and Prevention, 9 Aug. 2013,
+        https://www.cdc.gov/asthma/asthma_stats/asthma_obesity.htm.
+
+
+        “Why Asthma Is a Social Justice Issue.” Environment & Health Data Portal, 24 Oct. 2019,
+        a816-dohbesp.nyc.gov/IndicatorPublic/data-stories/povasthma/.
+        From Section 4-6
+        Tetsuya Kawano, Hiroto Matsuse, Susumu Fukahori, Tomoko Tsuchida, Tomoya Nishino, Chizu Fukushima, Shigeru
+        Kohno; Acetaldehyde at a Low Concentration Synergistically Exacerbates Allergic Airway Inflammation as an
+        Endocrine-Disrupting Chemical and as a Volatile Organic Compound. Respiration 1 August 2012; 84 (2): 135–141.
+        https://doi.org/10.1159/000337112
+
+
+        National Center for Biotechnology Information (NCBI). (2017). Overweight in patients with chronic obstructive
+        pulmonary disease needs more attention: a cross-sectional study in general practice. NPJ Prim Care Respir Med,
+        27, 63. DOI: 10.1038/s41533-017-0065-3. Retrieved from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5812476/
+
+        American Academy of Pediatrics (AAP). (2016). Changing Trends in Asthma Prevalence Among Children. Pediatrics,
+        137(1), e20152354. Retrieved from
+        https://publications.aap.org/pediatrics/article/137/1/e20152354/52801/Changing-Trends-in-Asthma-Prevalence-Among?autologincheck=redirected
+
+        Federal Bureau of Investigation (FBI). Amerithrax or Anthrax Investigation. Retrieved from
+        https://www.fbi.gov/history/famous-cases/amerithrax-or-anthrax-investigation
+
+
+        Hanania, N. A., and A. Sharafkhaneh. "Respiratory Diseases in the Elderly." National Center for Biotechnology
+        Information, 2018, www.ncbi.nlm.nih.gov/pmc/articles/PMC5951417/.
+
+        Baptist, A. P., and P. J. Busse. "Asthma Over the Age of 65: All's Well that Ends Well." National Center for
+        Biotechnology Information, 2014, www.ncbi.nlm.nih.gov/pmc/articles/PMC4137434/.
+
+        Asthma and Allergy Foundation of America (AAFA). "Asthma in Older Adults." Asthma and Allergy Foundation of
+        America, n.d.,
+        aafa.org/asthma/living-with-asthma/asthma-in-older-adults/#:~:text=Older%20adults%20have%20more%20asthma%20symptoms%20and%20deaths%20than%20younger%20people.&text=They%20are%20also%20less%20likely,may%20affect%20their%20asthma%20management.
+
+        Vogelberg C. (2019). Preschool children with persistent asthmatic symptoms. Therapeutics and clinical risk
+        management, 15, 451–460. https://doi.org/10.2147/TCRM.S170979
+
+        Vermeire, P. A. (2021). The potential role of microRNAs and exosomes in asthma and other allergic diseases.
+        European Respiratory Journal, 58(5), 2004656. https://erj.ersjournals.com/content/58/5/2004656
+
+        Anderson, G. P., & Jacoby, D. B. (2023). Innovations in the understanding and management of asthma: 2023 update.
+        Respiratory Research, 24(1), 2527-x.
+        https://respiratory-research.biomedcentral.com/articles/10.1186/s12931-023-02527-x
+
+        American Fitness Index. (n.d.). Unhealthy air quality in the U.S. Pacific Northwest. Retrieved from
+        https://americanfitnessindex.org/unhealthy-air-quality-u-s-pacific-northwest/
+
+        Shaw, D. (2020, July 18). New study investigates why some parts of Seattle have high asthma rates. Seattle
+        Times. Retrieved from
+        https://www.seattletimes.com/seattle-news/health/new-study-investigates-why-some-parts-of-seattle-have-high-asthma-rates/
+
+        Zhou, X., Li, Q., & Chen, L. (2021). Impacts of air pollution on health outcomes: A review of the influence of
+        concentration-response function choice. Environmental Health Perspectives, 129(12).
+        https://doi.org/10.1289/EHP8631481
+
+    </section>
+
 
     <script>
         const typewriterElement = document.querySelector('.typewriter h1');
@@ -826,7 +1292,11 @@
         // Start the typewriter effect
         typewriterEffect();
     </script>
-
+    <script>
+        function navigateToScreen() {
+            window.location.href = 'https://pages.github.coecis.cornell.edu/tn292/asthma_prediction_model/'; // Change URL to your desired location
+        }
+    </script>
 
 
     <script>
@@ -858,6 +1328,7 @@
             document.body.style.overflow = 'auto';
         }
     </script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
