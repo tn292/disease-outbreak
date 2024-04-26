@@ -527,29 +527,19 @@
                 in relation to socioeconomic indicators for New York State (NYS).
                 Data was collected from the following sources:
             </p>
-            <ul>
-                <li> All asthma prevalence data at the NYS county-level was sourced from the New York State Asthma
-                    Dashboard. This data was already partially compiled and focused on indicators of asthma prevalence
-                    like emergency department visits, hospital discharge data, deaths/death rates, and Medicaid managed
-                    care population statistics.
-                </li>
-                <li> Out of these indicators of asthma prevalence, one was initially chosen: general adults' current
-                    asthma prevalence. The data for this indicator was itself based on the following survey question:
-                    “Do you still have asthma?” with the possible responses being "Yes, No, Don’t know, Refused" from
-                    the Centers for Disease Control and Prevention’s Behavioral Risk Factor Surveillance System (BRFSS).
-                    The BRFSS data comes from annual statewide telephone and cellular surveys conducted by the CDC.
-                </li>
-                <li> The most recent data on socioeconomic indicators (such as personal income per capita, unemployment
-                    rates, and high school dropout rates) by county in NYS was obtained from the Rockefeller Institute
-                    of Government.
-                </li>
-            </ul>
+            <p> Data was collected from the following sources: All asthma prevalence data at the NYS county-level was
+                sourced from the New York State Asthma Dashboard. General adults' current asthma prevalence data was
+                sourced from the Centers for Disease Control and Prevention’s Behavioral Risk Factor Surveillance System
+                (BRFSS) survey, an annual collection of telephone and cellular surveys conducted by the CDC. Finally,
+                the most recent data on socioeconomic indicators (such as personal income per capita, unemployment
+                rates, and high school dropout rates) by county in NYS was obtained from the Rockefeller Institute of
+                Government.
+            </p>
             <p>Afterwards, the data cleaning process mainly involved ensuring consistent data formats for analysis.
                 Pandas was again utilized to read and clean the data, which came in CSV and Excel file formats.
                 Techniques like renaming columns, stripping extraneous spaces, and filtering for specific years (e.g.,
-                2017 and 2018) or for the most recent-year data (2021) was used to prepare the datasets for analysis.
-            </p>
-            <p> As for visualizations, Seaborn and Plotly Express were utilized; the former was used for static
+                2017 and 2018) or for the most recent-year data (2021) was used to prepare the datasets for analysis. As
+                for visualizations, Seaborn and Plotly Express were utilized; the former was used for static
                 visualizations like the scatterplots whereas the latter was utilized to create the interactive
                 choropleth maps (geographic visualizations which are similar to heat maps) that are delineated by
                 county.
@@ -696,17 +686,6 @@
                         It then drops off to rates under 5% from April to November, remaining relatively constant. It
                         then slowly rises from December to February, before another major peak in asthma prevalence.
                     </p>
-                    <p> Much of the existing literature suggests that rhinovirus, or the common cold, is strongly
-                        related to a higher incidence of asthmatic people. Rhinovirus causes inflammation of bronchial
-                        epithelial cells, which restricts airflow, exacerbating already restricted airways existing in
-                        asthmatic individuals (Khan M. A., 2022). Since rhinovirus has its highest rate of incidence
-                        during the winter and early spring months, this may be linked with worsened symptoms for
-                        asthmatic individuals. Similarly, during early spring months, pollen counts in many regions of
-                        the U.S. are at an all-year high, leading to worsened symptoms of seasonal allergies (such as
-                        rhinitis). Since this can irritate the airways, it can further explain exacerbation of those
-                        already dealing with asthmatic symptoms.
-
-                    </p>
                     <p> Asthma prevalence refers to the proportion of the population affected by asthma at a given point
                         in time. According to the CDC, asthma prevalence is measured using data from the National Health
                         Interview Survey (NHIS), where respondents self-report whether they have ever been told by a
@@ -716,6 +695,17 @@
                         the population and helps public health authorities understand the scope of the problem and
                         allocate resources accordingly.
                     </p>
+                    <p> Much of the existing literature suggests that rhinovirus, or the common cold, is strongly
+                        related to a higher incidence of asthmatic people. Rhinovirus causes inflammation of bronchial
+                        epithelial cells, which restricts airflow, exacerbating already restricted airways existing in
+                        asthmatic individuals (Khan M. A., 2022). Since rhinovirus has its highest rate of incidence
+                        during the winter and early spring months, this may be linked with worsened symptoms for
+                        asthmatic individuals. Similarly, during early spring months, pollen counts in many regions of
+                        the U.S. are at an all-year high, leading to worsened symptoms of seasonal allergies (such as
+                        rhinitis). Since this can irritate the airways, it can further explain exacerbation of those
+                        already dealing with asthmatic symptoms.
+                    </p>
+
                 </div>
 
 
@@ -782,8 +772,6 @@
                     New York State (NYS). The following visualizations are helpful to compare socioeconomic status with
                     asthma prevalence at the county level in NYS.
                 </p>
-                <p> Here is a visualization showing asthma prevalence by county:
-                </p>
                 <img src="https://github.com/tn292/new_york_asthma/blob/main/nyc-asthma.jpg?raw=true" <div
                     style=" color: rgb(84, 85, 176); font-size: 20px" alt="Asthma Prevalence in NY"
                     style="width: 80%; height: auto;" class="center"">
@@ -796,8 +784,6 @@
                 <p> An elementary scan between the visualizations generated by both two data sets seems to reveal no noticeable correlation between income and asthma by county.
                 </p>
                 <p> The same can be said between unemployment rates and public high school dropout rates versus asthma prevalence.
-                </p>
-                <p> Unemployment Rate in NYS by County:
                 </p>
                 <img src=" https://github.com/tn292/new_york_unemployment/blob/main/new_york_unemployment.jpg?raw=true"
                     <div style=" color: rgb(84, 85, 176); font-size: 20px" alt="Asthma Prevalence in NY"
@@ -978,21 +964,23 @@
                                     susceptibility to respiratory viruses, are particularly prone to asthma attacks.
                                     Babies are more susceptible to asthma attacks due to several factors. Their smaller
                                     airways can easily become blocked or irritated by viral infections, tight airways,
-                                    or mucus buildup, making breathing difficult. Additionally, infants may lack the
-                                    ability to effectively communicate their symptoms, leading to delays in diagnosis
-                                    and treatment. Respiratory viruses, common in children under 5, are a major trigger
-                                    for asthma symptoms in infants, with at least half of asthmatic children showing
-                                    signs before age 5 (Vogelberg, 2019). Moreover, infants with a family history of
-                                    asthma or allergies, specific allergies, or exposure to maternal smoking during
-                                    pregnancy are at higher risk of developing asthma early in life. Identifying asthma
-                                    in infants can be challenging due to overlapping symptoms with other conditions like
-                                    bronchiolitis, croup, or pneumonia. Diagnostic methods such as lung function tests
-                                    are often impractical, and doctors may rely on observing the child's response to
-                                    medications, blood tests, allergy testing, and X-rays for diagnosis. Treatment
-                                    involves administering asthma medications tailored for infants, typically through
-                                    nebulizers or inhalers with spacers and masks. Caregivers should develop an Asthma
-                                    Action Plan with their child's doctor to manage symptoms effectively and seek
-                                    emergency care when necessary.
+                                    or mucus buildup, making breathing difficult.
+                                </p>
+                                <p> Additionally, infants may lack the ability to effectively communicate their
+                                    symptoms, leading to delays in diagnosis and treatment. Respiratory viruses, common
+                                    in children under 5, are a major trigger for asthma symptoms in infants, with at
+                                    least half of asthmatic children showing signs before age 5 (Vogelberg, 2019).
+                                    Moreover, infants with a family history of asthma or allergies, specific allergies,
+                                    or exposure to maternal smoking during pregnancy are at higher risk of developing
+                                    asthma early in life. Identifying asthma in infants can be challenging due to
+                                    overlapping symptoms with other conditions like bronchiolitis, croup, or pneumonia.
+                                    Diagnostic methods such as lung function tests are often impractical, and doctors
+                                    may rely on observing the child's response to medications, blood tests, allergy
+                                    testing, and X-rays for diagnosis. Treatment involves administering asthma
+                                    medications tailored for infants, typically through nebulizers or inhalers with
+                                    spacers and masks. Caregivers should develop an Asthma Action Plan with their
+                                    child's doctor to manage symptoms effectively and seek emergency care when
+                                    necessary.
                                 </p>
                             </div>
                         </div>
@@ -1250,6 +1238,8 @@
                                                         style="width: 80%; height: auto;" class="center"">
                                                     </div>
                                                 </div>
+                                                <p> There is also not a large correlation between the distribution of acetaldehyde in the USA by state and the distribution of asthma. This is unsurprising because the distribution of formaldehyde and acetaldehyde is very similar, with just California having a high percentage of formaldehyde but not acetaldehyde. Since acetaldehyde is also related to smoking, a more prevalent issue in the South than in California, that could be the reason for California’s change. Acetaldehyde, just like smoking, more exacerbates asthma symptoms than “causing” it, which would not affect the percentage of asthmatic people by state. 
+                                                </p>
 
 
 
