@@ -139,6 +139,22 @@
 
         }
 
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Centers the buttons horizontally */
+
+
+            align-items: center;
+            /* Centers the buttons vertically */
+
+            flex-direction: row;
+            /* Stacks buttons vertically */
+            gap: 10px;
+            /* Adds space between buttons */
+        }
+
+
         #navigateButton {
             font-size: 1.5rem;
             padding: 10px 20px;
@@ -852,11 +868,14 @@
                 <div>
                     <canvas id=" asthmaChart"></canvas>
                     </div>
-                    <button onclick="updateChartData('children')" ;
-                        style="width: 100px; height: 50px;">Children</button>
-                    <button onclick="updateChartData('adults')" ; style="width: 100px; height: 50px;">Adults</button>
-                    <button onclick="updateChartData('seniors')" ; ;
-                        style="width: 100px; height: 50px;">Seniors</button>
+                    <div class="button-container">
+                        <button onclick="updateChartData('children')" ;
+                            style="width: 100px; height: 50px;">Children</button>
+                        <button onclick="updateChartData('adults')" ;
+                            style="width: 100px; height: 50px;">Adults</button>
+                        <button onclick="updateChartData('seniors')" ; ;
+                            style="width: 100px; height: 50px;">Seniors</button>
+                    </div>
 
                     <div style=" color: rgb(84, 85, 176); font-size: 20px">
                         <b>
@@ -1042,19 +1061,20 @@
 
                             <div class=" container">
                                 <div class="fixed-image">
-                                    <img src="https://github.com/tn292/asthma_distribution/blob/main/asthma_distribution.jpg?raw=true"
-                                        alt="Distribution of Asthma in USA" style="width: 77%; height: auto;"
-                                        class="center"">
-                                    </div>
-                                    <div class=" fixed-image">
+                                    <img src=" https://github.com/tn292/obesity_distr/blob/main/obesity_distr.jpg?raw=true"
+                                        alt="Distribution of Obesity in USA" style="width: 77%; height: auto;"
+                                        class="center">
+                                </div>
+                                <div class=" fixed-image">
                                     <img src="https://github.com/tn292/copd_distr/blob/main/copd_distr.jpg?raw=true"
                                         alt="Distribution of COPD in USA" style="width: 75%; height: auto;"
                                         class="center"">
                                     </div>
                                 </div>
-                                <img src=" https://github.com/tn292/obesity_distr/blob/main/obesity_distr.jpg?raw=true"
-                                        alt="Distribution of Obesity in USA" style="width: 40%; height: auto;"
-                                        class="center">
+                                    <img src="
+                                        https://github.com/tn292/asthma_distribution/blob/main/asthma_distribution.jpg?raw=true"
+                                        alt="Distribution of Asthma in USA" style="width: 40%; height: auto;"
+                                        class="center"">
                                     <p> Looking at the relative concentrations of individuals with asthma, COPD, and
                                         obesity among all 50 states, there seems to be some level of correlation between
                                         the three, but mostly between COPD and obesity. For example, in the Southeast
@@ -1092,7 +1112,7 @@
                                         both COPD and obesity independently, rather than a direct correlation between
                                         COPD and obesity itself.
                                     </p>
-                                    <img src="https://github.com/tn292/corr_matrix/blob/main/corr_matrix.jpg?raw=true"
+                                    <img src=" https://github.com/tn292/corr_matrix/blob/main/corr_matrix.jpg?raw=true"
                                         alt="Correlation Matrix" class="center">
                                     <p> Our computed correlation matrix displays measures of geographic association
                                         between the afflictions of COPD, obesity, and asthma. Greater absolute values
