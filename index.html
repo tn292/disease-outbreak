@@ -4,6 +4,9 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jacquard+12+Charted&family=Sedan:ital@0;1&display=swap"
@@ -1610,16 +1613,16 @@
             }
         }
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+    <script> document.addEventListener("DOMContentLoaded", function () {
             var ctx = document.getElementById(' asthmaChart').getContext('2d');
             var asthmaChart = new Chart(ctx, {
                 type: 'bar',
+                plugins: [ChartDataLabels],  // Ensure the plugin is activated
                 data: {
                     labels: ['Male', 'Female'],
                     datasets: [{
-                        label: 'Asthma Prevalence',
-                        data: [9.2, 6.4], // Default to children data
+                        label: 'Asthma Prevalence Percentage',
+                        data: [9.2, 6.4],  // Default to children data percentages
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.6)',
                             'rgba(255, 99, 132, 0.6)'
@@ -1628,38 +1631,59 @@
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 99, 132, 1)'
                         ],
-                        borderWidth: 1
+                        borderWidth: 1,
+                        datalabels: {
+                            align: 'end',
+                            anchor: 'end',
+                            formatter: function (value, context) {
+                                // Matches the data index to the total numbers
+                                var totalNumbers = {
+                                    'children': ['6,670,000 total', '4,640,000 total'],
+                                    'adults': ['16,014,600 total', '26,863,200 total'],
+                                    'seniors': ['3,038,000 total', '5,828,000 total']
+                                };
+                                var group = window.currentGroup || 'children';  // Default or current group
+                                return totalNumbers[group][context.dataIndex];
+                            },
+                            color: '#444',
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
                     }]
                 },
                 options: {
-                    maintainAspectRatio: true, // Maintains width/height ratio
-                    aspectRatio: 2, // Adjust aspect ratio to control size
+                    maintainAspectRatio: true,
+                    aspectRatio: 2,
                     scales: {
                         y: {
                             beginAtZero: true,
-                            suggestedMax: 15 // Adjust max value based on your data needs
+                            suggestedMax: 15
                         }
-                    }, plugins: {
+                    },
+                    plugins: {
                         legend: {
-                            labels: {
-                                backgroundColor: 'rgba(0, 0, 0, 0)'  // Transparent color for the dataset label
-                            }
+                            display: true,
+                        },
+                        datalabels: {
+                            display: true
                         }
                     }
                 }
             });
 
-            // Function to update chart data
             window.updateChartData = function (group) {
-                var data = {
+                var percentageData = {
                     'children': [9.2, 6.4],
                     'adults': [6.2, 10.4],
                     'seniors': [4.9, 9.4]
                 };
-                asthmaChart.data.datasets[0].data = data[group];
+                asthmaChart.data.datasets[0].data = percentageData[group];
+                window.currentGroup = group;  // Store current group globally to access in datalabels formatter
                 asthmaChart.update();
             }
         });
+
     </script>
 
 
